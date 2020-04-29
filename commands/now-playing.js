@@ -7,7 +7,7 @@ module.exports.run = async (client, message) => {
 
     if(!message.member.voice.channel) return message.channel.send({embed: {color: embedFail, description: `You must be in a voice channel!` }})
 
-    if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: embedFail, description: `There is nothing playing!` }})
+    if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: embedFail, description: `Nothing is being played!` }})
 
     const song = await client.player.nowPlaying(message.guild.id);
 

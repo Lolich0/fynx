@@ -9,7 +9,7 @@ module.exports.run = async (client, message) => {
 
     const song = await client.player.resume(message.guild.id);
 
-    if(!song) return message.channel.send({embed: {color: embedFail, description: `There is nothing playing!` }})
+    if(!song) return message.channel.send({embed: {color: embedFail, description: `Nothing is being played!` }})
 
     message.channel.send({embed: {color: embedSuccess, description: `\`${song.name}\` has been resumed!` }})
 

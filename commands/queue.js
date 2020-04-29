@@ -9,10 +9,10 @@ module.exports.run = async (client, message) => {
 
     const queue = client.player.getQueue(message.guild.id);
 
-    if(!queue) return message.channel.send({embed: {color: embedFail, description: `There is nothing playing!` }})
+    if(!queue) return message.channel.send({embed: {color: embedFail, description: `Nothing is being played!` }})
 
     let q = queue.songs.map((song, i) => {
-        return `${i === 0 ? 'Current' : `${i+1}`}- ${song.name} : ${song.author}`
+        return `${i === 0 ? 'Current' : `${i+1}`}- \`${song.name} : ${song.author}\``
     }).join('\n');  
        message.channel.send({embed: {color: embedSuccess, description: `${q}` }})
 }

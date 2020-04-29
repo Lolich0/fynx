@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
+const express = require("express")
+const app = express()
+
 
 const settings = require ("./config/bot.json") // The bot connects using the configuration file
 
@@ -15,6 +18,16 @@ client.on("ready", () => {
     console.log("The bot is ready to play music"); // If the bot is ready it sends a message in the console
 
 });
+
+const https = require('https');
+app.get("/", (request, response) => {
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  https.get(`https://zmusic22.glitch.me/`);
+}, 280000);
+
 
 client.login(settings.token_bot); //The bot connects thanks to the token
 

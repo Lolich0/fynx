@@ -1,4 +1,7 @@
 const emotes = require ("../config/emojis.json");
+const embedColor = "#36393e";
+const embedSuccess = "#22BF41";
+const embedFail = "#f30707";
 
 module.exports.run = async (client, message, args) => {
 

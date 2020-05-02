@@ -1,25 +1,17 @@
-const emotes = require ("../config/emojis.json");
-const embedColor = "#36393e";
-const embedSuccess = "#22BF41";
-const embedFail = "#f30707";
+const discord = require('discord.js');
 
-module.exports.run = async (client, message, args) => {
- 
+module.exports.run = async (bot, message, args) => {
 
-
-    message.channel.send({embed: {color: embedSuccess,description: ` \`.play\` \`[.p]\` → بۆ لێدانی گۆرانی
-**\`.skip\` \`[.s]\`**→ بۆ لادانی گۆرانی
-**\`.stop\`** → بۆ راوەستاندنی بۆت
-**\`.resume\`** → بۆ لێدانەوەی گۆرانی
-**\`.queue\`** → بۆ سەیرکردنی سڕەی گۆرانیەکان
-**\`.now-playing\` \`[.np]\`** →چ گۆرانیەک ئێستا لیدراوە
-\`.\` ` }}) 
-
-
+    let embed = new discord.RichEmbed()
+        .setColor('RANDOM')
+        .setThumbnail(bot.user.avatarURL)
+        .setTitle(`**MUSIC COMMANDS**`)
+        .setDescription(`TEST DAKAM`)
+    message.channel.send(embed);
 
 };
 
-module.exports.config = {
-    name: "help",
-    aliases: ["hemn"]
+module.exports.help = {
+    name: 'help',
+    aliases: []
 };

@@ -81,8 +81,13 @@ client.on('message', message => {
   .setTimestamp()
 
 .setTitle("**MUSIC COMMANDS**")   
-.setDescription(`\`.play\` [.p] → بۆ لێدانی گۆرانی
-`)
+.setDescription(`\`.play\` \`[.p]\` → بۆ لێدانی گۆرانی
+**\`.skip\` \`[.s]\`**→ بۆ لادانی گۆرانی
+**\`.stop\`** → بۆ راوەستاندنی بۆت
+**\`.resume\`** → بۆ لێدانەوەی گۆرانی
+**\`.queue\`** → بۆ سەیرکردنی سڕەی گۆرانیەکان
+**\`.now-playing\` \`[.np] →\`چ گۆرانیەک ئێستا لیدراوە
+\`.\``)
  .setFooter('SOUL々MORTAL')
 
 

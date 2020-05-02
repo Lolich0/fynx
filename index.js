@@ -3,7 +3,6 @@ const fs = require("fs");
 const client = new Discord.Client();
 const express = require("express")
 const app = express()
-const prefix = "."
 
 const settings = require ("./config/bot.json") // The bot connects using the configuration file
 
@@ -71,30 +70,6 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-client.on('message', message => {
-    if (message.author.bot) return;
-     if (message.content  === prefix + "help") {
-          const embed = new Discord.RichEmbed()
-  
-
-   .setColor('RANDOM')
-  .setTimestamp()
-
-.setTitle("**MUSIC COMMANDS**")   
-.setDescription(`\`.play\` \`[.p]\` → بۆ لێدانی گۆرانی
-**\`.skip\` \`[.s]\`**→ بۆ لادانی گۆرانی
-**\`.stop\`** → بۆ راوەستاندنی بۆت
-**\`.resume\`** → بۆ لێدانەوەی گۆرانی
-**\`.queue\`** → بۆ سەیرکردنی سڕەی گۆرانیەکان
-**\`.now-playing\` \`[.np] →\`چ گۆرانیەک ئێستا لیدراوە
-\`.\``)
- .setFooter('SOUL々MORTAL')
-
-
-   message.channel.send({embed});
-
-    }
-});
 
  //   "token_bot": "Njk1NTkwNTEwNTU4OTY5ODU3.XqfKTQ.g60HXOLnnRKRLpPT2HwpI6FPYT4",
 

@@ -43,7 +43,7 @@ client.on('message', async (message) => {
     if(commandfile) commandfile.run(client,message,args)
         
 });
-      
+ 
 client.commands = new Discord.Collection();
 client.aliases =  new Discord.Collection();
 

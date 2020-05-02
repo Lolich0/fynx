@@ -2,6 +2,7 @@ dependencies:
   '@discordjs/opus': 0.1.0
   discord-player: 1.4.1
   discord.js: 12.2.0
+  embed-creator: 1.2.4
   express: 4.17.1
 packages:
   /@derhuerst/http-basic/8.2.0:
@@ -294,6 +295,11 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+  /embed-creator/1.2.4:
+    deprecated: Creating embeds is a simple task that should not be done through one function. Please use Discord.js's functions instead.
+    dev: false
+    resolution:
+      integrity: sha512-minhzmBrlxfFdSuyXxQPgBJkyVtn0jCwvvNc6DSOI0GFdva3iRnSg8dR1dKdOmgQr9E5Ur6HuA3/A0rwaIqb+Q==
   /encodeurl/1.0.2:
     dev: false
     engines:
@@ -1098,4 +1104,5 @@ specifiers:
   '@discordjs/opus': ^0.1.0
   discord-player: ^1.4.0
   discord.js: ^12.2.0
+  embed-creator: ^1.2.4
   express: ^4.17.1

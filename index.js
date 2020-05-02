@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  https.get(`https://zmusic22.glitch.me/`);
+  https.get(`https://rezxmusic.glitch.me/`);
 }, 280000);
 
 

@@ -74,17 +74,3 @@ fs.readdir("./commands/", (err, files) => {
 
 
  //   "token_bot": "Njk1NTkwNTEwNTU4OTY5ODU3.XqfKTQ.g60HXOLnnRKRLpPT2HwpI6FPYT4",
-
-
-
-const prefix = '.'
-client.on("message", message => {
-if (message.content === prefix + ('test')) {
-let one = new Discord.RichEmbed()
- .setFooter("Hemn Bot © 2020-2025, Cool Bot ! Since 2020")
- .setImage('https://media.discordapp.net/attachments/706377606659964928/707007568895279104/pngtree-geometric-poster-banner-gradient-purple-geometry-image_12275_3.png')
- .setAuthor(`Hemn System`,"https://media.discordapp.net/attachments/701435523285123103/706260422528860191/cool_logo.png?width=406&height=406")
- .setDescription('<:on2:706979888837558382> `h/help admin` Admin Commands\n<:on2:706979888837558382> `h/help general` General Commands\n<:on2:706979888837558382> `h/help protect` Protect Commands\n<:on2:706979888837558382> `h/help music` Music Commands');
- message.channel.send(one);
-}
-});

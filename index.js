@@ -72,5 +72,4 @@ fs.readdir("./commands/", (err, files) => {
 
 
 
-
  //   "token_bot": "Njk1NTkwNTEwNTU4OTY5ODU3.XqfKTQ.g60HXOLnnRKRLpPT2HwpI6FPYT4",

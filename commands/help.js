@@ -6,7 +6,7 @@ const embedFail = "#f30707";
 module.exports.run = async (client, message) => {
 
   
-    message.channel.send({embed: {color: embedSuccess, title: `Help Commands` ,description: `${}:\n` }})
+    message.channel.send({embed: {color: embedSuccess, title: `Music Commands` ,description: `\n\n\`1play [URL/song Title]\` - Plays The First Song From Youtube\n\n \`1skip\` - skips the currents song` }})
 
 
 };

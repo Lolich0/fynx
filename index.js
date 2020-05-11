@@ -72,7 +72,6 @@ client.on("message", message => {
       .setColor("#C70039")
       .setThumbnail(message.author.displayAvatarURL)
       .addField(`Message: `, message.content);
-
     client.channels.get("709387695419424851").send(embed);
   }
 });

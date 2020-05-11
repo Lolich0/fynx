@@ -4,12 +4,13 @@
   "main": "index.js",
   "author": "Ultra - Developers",
   "license": "MIT",
+  "engines": { "node": "12.x" },
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.17.1",
-    "discord.js": "^12.2.0",
+    "discord.js": "12.1.1",
     "discord-akairo": "^8.0.0",
     "ytdl-core-discord": "^1.2.0",
     "discord-anti-spam": "^2.4.1",

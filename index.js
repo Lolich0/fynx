@@ -80,7 +80,6 @@ let verifyL = ["None", "Low", "Medium", "Hard", "Extreme"];
 if(msg.author.bot || msg.channel.type === "dm") return undefined;
 let args = msg.content.split(' ');
 if(args[0].toLowerCase() == `${prefix}server`) {
-msg.guild.fetchBans().then(bans => {
 let server = new Discord.MessageEmbed()
 .setAuthor(msg.author.username,msg.author.avatarURL)
 .setColor("#0bbafe")
@@ -89,7 +88,6 @@ let server = new Discord.MessageEmbed()
 .addField("Owner",`${msg.guild.owner}` ,true)
 .addField("Region",`\`${msg.guild.region}\`` ,true)
 .addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
-.addField("Lastest member",`${Array.from(msg.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,true)
 .addField("Created at",`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}` ,true)
 .addField("Verification level",`\`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
 .addField("Members",`All : \`${msg.guild.memberCount}\`
@@ -97,7 +95,7 @@ Online : \`${msg.guild.members.filter(m=>m.presence.status == 'online').size}\`
 Do Not Disturb : \`${msg.guild.members.filter(m=>m.presence.status == 'dnd').size}\`
 Idle : \`${msg.guild.members.filter(m=>m.presence.status == 'idle').size}\`
 Offline : \`${msg.guild.members.filter(m=>m.presence.status == 'offline').size}\` 
-Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`| » Bans : \`${bans.size}\`
+Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`
 ` ,true)
 .addField("Guild Channels",`All : **\`\`${msg.guild.channels.size}\`\`**
 Voice : **\`\`${msg.guild.channels.filter(m => m.type === 'voice').size}\`\`**
@@ -111,8 +109,7 @@ More ? : **\`$channels\`**` ,true)
 .setTimestamp()
 msg.channel.send(server)
  
-});
-}
+};
 })// wait hold on why prefix are !? 
 //so if we change prefix it changes
 // you know u cant code dat i am right?

@@ -4,7 +4,7 @@ dependencies:
   discord-anti-spam: 2.4.1
   discord-giveaways: 4.0.2
   discord-player: 1.4.1
-  discord.js: 12.2.0
+  discord.js: 12.1.1
   express: 4.17.1
   ffmpeg-static: 4.2.1
   fs: 0.0.2
@@ -28,16 +28,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-CU1q0UXQUpFNzNB7gufgoisDHP7n+T3tkqTsp3MNUkVJ5+hS3BCvME8uCXAUFlz+6T2FbTCu75A+yQ7HMKqRKw==
-  /@discordjs/form-data/3.0.1:
-    dependencies:
-      asynckit: 0.4.0
-      combined-stream: 1.0.8
-      mime-types: 2.1.27
-    dev: false
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-ZfFsbgEXW71Rw/6EtBdrP5VxBJy4dthyC0tpQKGKmYFImlmmrykO14Za+BiIVduwjte0jXEBlhSKf0MWbFp9Eg==
   /@discordjs/node-pre-gyp/0.1.0:
     dependencies:
       detect-libc: 1.0.3
@@ -317,11 +307,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KvB/MwcVpxoDOM4pTz8kG5jbt/bcwP1nZV7b2f2pKx964o35xtfy+M+CPheRWxiQ79aP/b2v3dj0nWykrB7dqQ==
-  /discord.js/12.2.0:
+  /discord.js/12.1.1:
     dependencies:
       '@discordjs/collection': 0.1.5
-      '@discordjs/form-data': 3.0.1
       abort-controller: 3.0.0
+      form-data: 3.0.0
       node-fetch: 2.6.0
       prism-media: 1.2.2
       setimmediate: 1.0.5
@@ -338,7 +328,7 @@ packages:
       utf-8-validate: ^5.0.2
       zlib-sync: ^0.1.6
     resolution:
-      integrity: sha512-Ueb/0SOsxXyqwvwFYFe0msMrGqH1OMqpp2Dpbplnlr4MzcRrFWwsBM9gKNZXPVBHWUKiQkwU8AihXBXIvTTSvg==
+      integrity: sha512-Y6+QfAUZkb9cy27cfNqUigAgYVSKTw9jPF3mN4UDMih3Em3VQ0WjGBdX1UbE8CwFkLOu5XWQSNPdsoStTR8c2Q==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -434,6 +424,16 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-aAWcW57uxVNrQZqFXjITpW3sIUQmHGG3qSb9mUah9MgMC4NeWhNOlNjXEYq3HjRAvL6arUviZGGJsBg6z0zsWA==
+  /form-data/3.0.0:
+    dependencies:
+      asynckit: 0.4.0
+      combined-stream: 1.0.8
+      mime-types: 2.1.27
+    dev: false
+    engines:
+      node: '>= 6'
+    resolution:
+      integrity: sha512-CKMFDglpbMi6PyN+brwB9Q/GOw0eAnsrEZDgcsH5Krhz5Od/haKHAX0NmQfha2zPPz0JpWzA7GJHGSnvCRLWsg==
   /forwarded/0.1.2:
     dev: false
     engines:
@@ -1163,7 +1163,7 @@ specifiers:
   discord-anti-spam: ^2.4.1
   discord-giveaways: ^4.0.2
   discord-player: ^1.4.1
-  discord.js: ^12.2.0
+  discord.js: 12.1.1
   express: ^4.17.1
   ffmpeg-static: ^4.2.1
   fs: ^0.0.2

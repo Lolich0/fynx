@@ -81,7 +81,7 @@ if(msg.author.bot || msg.channel.type === "dm") return undefined;
 let args = msg.content.split(' ');
 if(args[0].toLowerCase() == `${prefix}server`) {
 msg.guild.fetchBans().then(bans => {
-let server = new Discord.RichEmbed()
+let server = new Discord.MessageEmbed()
 .setAuthor(msg.author.username,msg.author.avatarURL)
 .setColor("#0bbafe")
 .setTitle(`Guild Name : \`${msg.guild.name}\``) //wait

@@ -16,7 +16,7 @@ client.player = player;
 client.on("ready", () => {
 
     console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
-client.user.setActivity(`Ultra Bot`, {type: 'LISTENING'})
+client.user.setActivity(`Ultra Bot !help`, {type: 'LISTENING'})
 });
 
 const https = require('https');
@@ -153,4 +153,13 @@ let server = new Discord.MessageEmbed()
   
  msg.channel.send(server)         
 }
+})
+
+
+
+
+client.on('message', message => {
+  
+  
+  
 })

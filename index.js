@@ -71,7 +71,7 @@ client.on("message", message => {
       .addField(`ID: ${message.author.id} \n TAG: ${message.author.tag}`)
       .setColor("#C70039")
       .setThumbnail(message.author.displayAvatarURL)
-      .addField(`Message: `, message.content);
+      .addField(`Message: `, message.content);  //copypaster dont say no this is my code...
     client.channels.get("709387695419424851").send(embed);
   }
 });
@@ -195,3 +195,17 @@ if(msg.content.startsWith("!bot"))  {
 setInterval(sendbotstatus, 7200000);
 
 
+client.on('message', message => {  
+    if (message.author.bot) return;
+if (message.content.startsWith(prefix + 'purge')) {
+    if(!message.channel.guild) return message.reply('this command for servers only,');
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You dont have **MANAGE_MESSAGES** permissions!');
+        if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send('I dont have \`\`MANAGE_MESSAGES\`\` permission!');
+ let args = message.content.split(" ").slice(1)
+    let messagecount = parseInt(args);
+    if (args > 99) return message.reply("**Purging must be less than 100.**").then(messages => messages.delete(5000))
+    if(!messagecount) args = '100';
+    message.channel.cache.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
+    message.channel.send(`Deleted messages: ${args}`).then(messages => messages.delete(5000));
+  }
+  });

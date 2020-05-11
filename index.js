@@ -2,7 +2,8 @@ const Discord = require("discord.js");
 const fs = require("fs");
 const client = new Discord.Client();
 const express = require("express")
-const app = express()
+const app = express();
+const moment = require("moment")
 
 const settings = require ("./config/bot.json") // The bot connects using the configuration file
 
@@ -68,3 +69,48 @@ fs.readdir("./commands/", (err, files) => {
     });
 
 });
+
+
+
+
+
+
+client.on("message", msg => {
+let verifyL = ["None", "Low", "Medium", "Hard", "Extreme"];
+if(msg.author.bot || msg.channel.type === "dm") return undefined;
+let args = msg.content.split(' ');
+if(args[0].toLowerCase() == `${prefix}server`) {
+msg.guild.fetchBans().then(bans => {
+let server = new Discord.RichEmbed()
+.setAuthor(msg.author.username,msg.author.avatarURL)
+.setColor("#0bbafe")
+.setTitle(`↬ | Guild Name : \`${msg.guild.name}\``)
+.addField("↬ | Guild ID",`» \`${msg.guild.id}\`` ,true)
+.addField("↬ | Guild Owner",`» ${msg.guild.owner}` ,true)
+.addField("↬ | Guild Region",`» \`${msg.guild.region}\`` ,true)
+.addField("↬ | Guild Afk Channel",`» \`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
+.addField("↬ | Last Member",`${Array.from(msg.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,true)
+.addField("↬ | Guild Created At",`» ${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm a")}` ,true)
+.addField("↬ | Guild Verification",`» \`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
+.addField("↬ | Guild States Member",`» All : \`${msg.guild.memberCount}\`
+» Online : \`${msg.guild.members.filter(m=>m.presence.status == 'online').size}\`
+» Do Not Disturb : \`${msg.guild.members.filter(m=>m.presence.status == 'dnd').size}\`
+» Idle : \`${msg.guild.members.filter(m=>m.presence.status == 'idle').size}\`
+» Offline : \`${msg.guild.members.filter(m=>m.presence.status == 'offline').size}\`
+» Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`| » Bans : \`${bans.size}\`
+` ,true)
+.addField("↬ | Guild Rooms",`» All : **\`\`${msg.guild.channels.size}\`\`**
+» Voice : **\`\`${msg.guild.channels.filter(m => m.type === 'voice').size}\`\`**
+» Text : **\`\`${msg.guild.channels.filter(m => m.type === 'text').size}\`\`**
+» Category : **\`\`${msg.guild.channels.filter(m => m.type === 'category').size}\`\`**  
+» More ? : **\`$channels\`**` ,true)
+.addField("↬ | Guild Roles",`» \`${msg.guild.roles.size}\`
+» More ? : \`$roles\`` ,true)
+.setThumbnail(msg.guild.iconURL)
+.setFooter(client.user.username,client.user.avatarURL)
+.setTimestamp()
+msg.channel.send(server)
+ 
+});
+}
+})

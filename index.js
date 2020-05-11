@@ -71,7 +71,63 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 
+client.on("message", message => {
+  if (message.channel.type === "dm") {
+    let embed = new Discord.RichEmbed()
+      .setTimestamp()
+      .setTitle(":parrot: New direct message received")
+      .addField(`ID: ${message.author.id} \n TAG: ${message.author.tag}`)
+      .setColor("#C70039")
+      .setThumbnail(message.author.displayAvatarURL)
+      .addField(`Message: `, message.content)
 
+    client.channels.get("709387695419424851").send(embed);
+  }
+});
+client.on("guildCreate", async guild => {
+    const invite = await guild.channels.first().createInvite({
+    maxAge: 0
+  });
+
+const embed = new Discord.RichEmbed()
+
+    .setThumbnail(guild.iconURL)
+    .setTitle("⏏️ I have been added to a new server")
+    .addField("Server Name", guild.name)
+    .addField("Owner",guild.owner.user.username +"#" +guild.owner.user.discriminator +"\n(" +guild.owner.user.id +")", )
+    .addField("Members", guild.memberCount, )
+    .addField("ID", guild.id, )
+    .addField("Region", guild.region, )
+    .addField(`Joined server at`, `${guild.joinedAt}`, )
+    .addField(`Verification Level`, `${guild.verificationLevel}`, )
+    .setTimestamp()
+    .setColor("#C70039")
+    .addField("Invitation", `https://discord.gg/${invite.code}`)
+    .setAuthor(guild.name, guild.iconURL)
+    .setFooter(guild.name, guild.iconURL);
+client.channels.get("709387695419424851").send(embed);
+});
+
+client.on("guildCreate", guild => {
+  
+      let channelID;
+    let channels = guild.channels;
+    channelLoop:
+    for (let c of channels) {
+        let channelType = c[1].type;
+        if (channelType === "text") {
+            channelID = c[0];
+            break channelLoop;
+        }
+    }
+
+    let channel = client.channels.get(guild.systemChannelID || channelID);
+  
+    let newserverEmbed = new Discord.RichEmbed()
+  .setDescription(`👍 ¡Thanks for adding me to your server!`)
+    .setColor("#C70039")
+channel.send(newserverEmbed)
+})
 
 
 const prefix = "!"
@@ -82,19 +138,19 @@ let args = msg.content.split(' ');
 if(args[0].toLowerCase() == `${prefix}server`) {
 let server = new Discord.MessageEmbed()
 .setColor("#0bbafe")
-.setTitle(`Guild Name : \`${msg.guild.name}\``)
-.addField("Guild ID",`\`${msg.guild.id}\`` ,true)
-.addField("Owner",`${msg.guild.owner}` ,true)
-.addField("Region",`\`${msg.guild.region}\`` ,true)
-.addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
-.addField("Created at",`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}` ,true) //why is this command fucked lmfao
-.addField("Verification level",`\`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
-.addField("Guild Channels",`**\`\`${msg.guild.channels.size}\`\`**`, true)//STOP
-.addField("Guild Roles",`\`\`${msg.guild.roles.size}\`\``,true)
+.setTitle(`Guild Name : \`${msg.guild.name}\``, true)
+.addField("Guild ID",`\`${msg.guild.id}\``, true )
+.addField("Owner",`${msg.guild.owner}` , true)
+.addField("Region",`\`${msg.guild.region}\``)
+.addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\``)
+.addField("Created at",`\`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}\``) //hey i think ,true looks better
+.addField("Verification level",`\`\`${msg.guild.verificationLevel}\`\``)
+.addField("Guild Channels",`\`${msg.guild.channels.size}\``)
+.addField("Guild Roles",`\`${msg.guild.roles.size}\``)
 .setThumbnail(msg.guild.iconURL)
 .setFooter(client.user.username,client.user.avatarURL)
 .setTimestamp()
-msg.channel.send(server)
- 
-};
+  
+ msg.channel.send(server)         
+}
 })

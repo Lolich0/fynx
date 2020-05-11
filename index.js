@@ -4,12 +4,6 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-let days = 0;
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
-let n = true;
-
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
@@ -162,14 +156,20 @@ client.on("message", msg => {
 client.on('message', msg => {
  const uptime = client.uptime;
 if(msg.content.startsWith("!bot"))  {
-  while (n) { if (uptime >= 8.64e+7) { days++; uptime -= 8.64e+7; } else if (uptime >= 3.6e+6) { hours++; uptime -= 3.6e+6; } else if (uptime >= 60000) {  minutes++; uptime -= 60000; } else if (uptime >= 1000) { seconds++; uptime -= 1000; } if (uptime < 1000)  n = false;}
+    let uptime = client.uptime;
+    let days = Math.round(uptime * 1.1574E-8);
+    let hours = Math.round(uptime * 2.7778E-7);
+    let minutes = Math.round(uptime * 1.6667E-5);
     let server = new Discord.MessageEmbed()
       .setColor("#0bbafe")
       .setTitle(`Support server: \`\`soon\`\``, true)
-      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec\``, true)
+      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min\``, true)
       .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
-      .addField("Developers", `! HΣXXX✨#0005, Real#0005,! DarkBoy🍭#6666`, true) 
-      .addField("Preix", "!", true)//edit it idk
+      .addField("Developers", '`! HΣXXX✨#0005, Real#0005,! DarkBoy🍭#6666`', true) 
+      .addField("Watching users", `\`${client.guilds.size}\``)
+      .addField("Watching rooms", `\`${client.channels.size}\``)
+      .addField("Watching guilds", `\`${client.channels.size}\``)
+      .addField("Prefix", "`!`", true)//edit it idk
       .setThumbnail(msg.guild.iconURL)
       .setFooter(client.user.username, client.user.avatarURL)
       .setTimestamp();

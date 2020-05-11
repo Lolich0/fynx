@@ -159,7 +159,6 @@ let server = new Discord.MessageEmbed()
 
 
 client.on('message', message => {
-  
-  
+if(message.content)  
   
 })

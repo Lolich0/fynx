@@ -15,7 +15,7 @@ client.player = player;
 client.on("ready", () => {
 
     console.log("The bot is ready to play music"); // If the bot is ready it sends a message in the console
-client.user.setActivity("ᴰᵉᵛ Ｈ Ｅ Ｍ Ｎ", {type: 'LISTENING'})
+client.user.setActivity("1help | ᴰᵉᵛ Ｈ Ｅ Ｍ Ｎ", {type: 'LISTENING'})
 });
 
 const https = require('https');

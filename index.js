@@ -28,8 +28,7 @@ setInterval(() => {
 }, 280000);
 
 
-client.login(settings.token_bot); //The bot connects thanks to the token
-
+client.login(settings.token_bot); 
 client.on('message', async (message) => {
 
     const prefix = settings.prefix;
@@ -69,7 +68,3 @@ fs.readdir("./commands/", (err, files) => {
     });
 
 });
-
-//No cause he already shared it to the internet :/
-// someone add some use Fuel command i am talkinh with  younes about verify
-//Fuel command huh wtf r u talking about

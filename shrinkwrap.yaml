@@ -1,7 +1,7 @@
 dependencies:
   '@discordjs/opus': 0.1.0
   discord-player: 1.4.1
-  discord.js: 11.5.1
+  discord.js: 11.6.4
   embed-creator: 1.2.4
   express: 4.17.1
   moment: 2.25.3
@@ -234,10 +234,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-KvB/MwcVpxoDOM4pTz8kG5jbt/bcwP1nZV7b2f2pKx964o35xtfy+M+CPheRWxiQ79aP/b2v3dj0nWykrB7dqQ==
-  /discord.js/11.5.1:
+  /discord.js/11.6.4:
     dependencies:
       long: 4.0.0
-      prism-media: 0.0.3
+      prism-media: 0.0.4
       snekfetch: 3.6.4
       tweetnacl: 1.0.3
       ws: 6.2.1
@@ -245,6 +245,7 @@ packages:
     engines:
       node: '>=6.0.0'
     peerDependencies:
+      '@discordjs/opus': ^0.1.0
       '@discordjs/uws': ^10.149.0
       bufferutil: ^4.0.0
       erlpack: discordapp/erlpack
@@ -253,7 +254,7 @@ packages:
       opusscript: ^0.0.6
       sodium: ^2.0.3
     resolution:
-      integrity: sha512-tGhV5xaZXE3Z+4uXJb3hYM6gQ1NmnSxp9PClcsSAYFVRzH6AJH74040mO3afPDMWEAlj8XsoPXXTJHTxesqcGw==
+      integrity: sha512-cK6rH1PuGjSjpmEQbnpuTxq1Yv8B89SotyKUFcr4RhnsiZnfBfDOev7DD7v5vhtEyyj51NuMWFoRJzgy/m08Uw==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -761,10 +762,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
-  /prism-media/0.0.3:
+  /prism-media/0.0.4:
     dev: false
     resolution:
-      integrity: sha512-c9KkNifSMU/iXT8FFTaBwBMr+rdVcN+H/uNv1o+CuFeTThNZNTOrQ+RgXA1yL/DeLk098duAeRPP3QNPNbhxYQ==
+      integrity: sha512-dG2w7WtovUa4SiYTdWn9H8Bd4JNdei2djtkP/Bk9fXq81j5Q15ZPHYSwhUVvBRbp5zMkGtu0Yk62HuMcly0pRw==
   /process-nextick-args/2.0.1:
     dev: false
     resolution:
@@ -1061,7 +1062,7 @@ shrinkwrapVersion: 3
 specifiers:
   '@discordjs/opus': ^0.1.0
   discord-player: ^1.4.0
-  discord.js: 11.5.1
+  discord.js: ^11.5.1
   embed-creator: ^1.2.4
   express: ^4.17.1
   moment: ^2.25.3

@@ -17,7 +17,7 @@ module.exports.run = async (client, message, args) => {
 
     client.player.setVolume(message.guild.id, parseInt(args.join(" ")));
 
-    message.channel.send({embed: {color: embedSuccess, description: `Volume set to \`${args.join(" ")}\` ` }})
+    message.channel.send({embed: {color: embedSuccess, description: `Music Volume set to \`${args.join(" ")}\` Enjoy !` }})
 
 
 };

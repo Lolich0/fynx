@@ -190,11 +190,9 @@ if(msg.content.startsWith("!bot"))  {
       .setThumbnail("https://cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png")
       .setFooter(client.user.username, "https://cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png")
       .setTimestamp();
-  client.channels.get("709387695419424851").send(bot)
+  client.channels.cache.get("709387695419424851").send(bot)
 }
 
+setInterval(sendbotstatus, 7200000);
 
 
-
-
-//setInterval(sendbotstatus, 60000);

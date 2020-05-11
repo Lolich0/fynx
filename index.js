@@ -81,36 +81,20 @@ if(msg.author.bot || msg.channel.type === "dm") return undefined;
 let args = msg.content.split(' ');
 if(args[0].toLowerCase() == `${prefix}server`) {
 let server = new Discord.MessageEmbed()
-.setAuthor(msg.author.username,msg.author.avatarURL)
 .setColor("#0bbafe")
-.setTitle(`Guild Name : \`${msg.guild.name}\``) //wait
+.setTitle(`Guild Name : \`${msg.guild.name}\``)
 .addField("Guild ID",`\`${msg.guild.id}\`` ,true)
 .addField("Owner",`${msg.guild.owner}` ,true)
 .addField("Region",`\`${msg.guild.region}\`` ,true)
 .addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
-.addField("Created at",`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}` ,true)
+.addField("Created at",`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}` ,true) //why is this command fucked lmfao
 .addField("Verification level",`\`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
-.addField("Members",`All : \`${msg.guild.memberCount}\`
-Online : \`${msg.guild.members.filter(m=>m.presence.status == 'online').size}\`
-Do Not Disturb : \`${msg.guild.members.filter(m=>m.presence.status == 'dnd').size}\`
-Idle : \`${msg.guild.members.filter(m=>m.presence.status == 'idle').size}\`
-Offline : \`${msg.guild.members.filter(m=>m.presence.status == 'offline').size}\` 
-Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`
-` ,true)
-.addField("Guild Channels",`All : **\`\`${msg.guild.channels.size}\`\`**
-Voice : **\`\`${msg.guild.channels.filter(m => m.type === 'voice').size}\`\`**
-Text : **\`\`${msg.guild.channels.filter(m => m.type === 'text').size}\`\`**
-Category : **\`\`${msg.guild.channels.filter(m => m.type === 'category').size}\`\`**  
-More ? : **\`$channels\`**` ,true)
-.addField("Guild Roles",`» \`${msg.guild.roles.size}\`
-» More ? : \`$roles\`` ,true)
+.addField("Guild Channels",`**\`\`${msg.guild.channels.size}\`\`**`, true)//STOP
+.addField("Guild Roles",`\`\`${msg.guild.roles.size}\`\``,true)
 .setThumbnail(msg.guild.iconURL)
 .setFooter(client.user.username,client.user.avatarURL)
 .setTimestamp()
 msg.channel.send(server)
  
 };
-})// wait hold on why prefix are !? 
-//so if we change prefix it changes
-// you know u cant code dat i am right?
-// if u need it go to discord-spec and add codes here everything make it embed
+})

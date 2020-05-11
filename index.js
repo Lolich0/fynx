@@ -14,8 +14,8 @@ client.player = player;
 
 client.on("ready", () => {
 
-    console.log("The bot is ready to play music"); // If the bot is ready it sends a message in the console
-client.user.setActivity("1help | ᴰᵉᵛ Ｈ Ｅ Ｍ Ｎ", {type: 'LISTENING'})
+    console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
+client.user.setActivity(`Ultra Bot`, {type: 'LISTENING'})
 });
 
 const https = require('https');
@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  https.get(`https://rezxmusic.glitch.me/`);
+  https.get(`https://ultra-bot-.glitch.me/`);
 }, 280000);
 
 
@@ -69,3 +69,7 @@ fs.readdir("./commands/", (err, files) => {
     });
 
 });
+
+//No cause he already shared it to the internet :/
+// someone add some use Fuel command i am talkinh with  younes about verify
+//Fuel command huh wtf r u talking about

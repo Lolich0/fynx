@@ -205,7 +205,7 @@ if (message.content.startsWith(prefix + 'purge')) {
     let messagecount = parseInt(args);
     if (args > 99) return message.reply("**Purging must be less than 100.**").then(messages => messages.delete(5000))
     if(!messagecount) args = '100';
-    message.channel.cache.fetchMessages({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
+    message.channel.messages.fetch({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
     message.channel.send(`Deleted messages: ${args}`).then(messages => messages.delete(5000));
   }
   });

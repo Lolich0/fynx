@@ -158,37 +158,20 @@ client.on("message", msg => {
   }
 });
 
-/*
-client.on('message', message => {
+
+client.on('message', msg => {
  const uptime = client.uptime;
-if(message.content.startsWith("!bot"))  {
+if(msg.content.startsWith("!bot"))  {
+  while (n) { if (uptime >= 8.64e+7) { days++; uptime -= 8.64e+7; } else if (uptime >= 3.6e+6) { hours++; uptime -= 3.6e+6; } else if (uptime >= 60000) {  minutes++; uptime -= 60000; } else if (uptime >= 1000) { seconds++; uptime -= 1000; } if (uptime < 1000)  n = false;}
     let server = new Discord.MessageEmbed()
       .setColor("#0bbafe")
-      .setTitle(`Guild Name : \`${msg.guild.name}\``, true)
-      .addField("Guild ID", `\`${msg.guild.id}\``, true)
-      .addField("Owner", `${msg.guild.owner}`, true) // ok try it noob
-      .addField("Region", `\`${msg.guild.region}\``, true)
-      .addField( "Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true) 
+      .setTitle(`Support server: \`\`soon\`\``, true)
+      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min , ${seconds} sec\``, true)
+      .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
+      .addField("Developers", `! HΣXXX✨#0005, Real#0005,! DarkBoy🍭#6666`, true) 
+      .addField("Preix", "!", true)//edit it idk
       .setThumbnail(msg.guild.iconURL)
       .setFooter(client.user.username, client.user.avatarURL)
       .setTimestamp();
-
-while (notCompleted) {
-//Narox
-       if (uptime >= 8.64e+7) {
-//Narox
-           days++;
-           uptime -= 8.64e+7;
- 
-       } else if (uptime >= 3.6e+6) {
-//Narox
-           hours++;
-           uptime -= 3.6e+6;
- 
-       } else if (uptime >= 60000) {
- 
-           minutes++;
-       uptime -= 60000; } else if (uptime >= 1000) { seconds++; uptime -= 1000; } if (uptime < 1000)  notCompleted = false;}
   
-})
-*/
+}})

@@ -1,5 +1,5 @@
 {
-  "name": "Ultra Bot",
+  "name": "ultrabot",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Ultra - Developers",
@@ -10,8 +10,9 @@
   "dependencies": {
     "@discordjs/opus": "^0.1.0",
     "discord-player": "^1.4.0",
-    "discord.js": "^12.2.0",
+    "discord.js": "11.5.1",
     "express": "^4.17.1",
-    "embed-creator": "^1.2.4"
+    "embed-creator": "^1.2.4",
+    "moment": "^2.25.3"
   }
 }

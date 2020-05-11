@@ -74,7 +74,7 @@ fs.readdir("./commands/", (err, files) => {
 
 
 
-
+const prefix = "!"
 client.on("message", msg => {
 let verifyL = ["None", "Low", "Medium", "Hard", "Extreme"];
 if(msg.author.bot || msg.channel.type === "dm") return undefined;
@@ -84,27 +84,27 @@ msg.guild.fetchBans().then(bans => {
 let server = new Discord.RichEmbed()
 .setAuthor(msg.author.username,msg.author.avatarURL)
 .setColor("#0bbafe")
-.setTitle(`↬ | Guild Name : \`${msg.guild.name}\``)
-.addField("↬ | Guild ID",`» \`${msg.guild.id}\`` ,true)
-.addField("↬ | Guild Owner",`» ${msg.guild.owner}` ,true)
-.addField("↬ | Guild Region",`» \`${msg.guild.region}\`` ,true)
-.addField("↬ | Guild Afk Channel",`» \`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
-.addField("↬ | Last Member",`${Array.from(msg.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,true)
-.addField("↬ | Guild Created At",`» ${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm a")}` ,true)
-.addField("↬ | Guild Verification",`» \`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
-.addField("↬ | Guild States Member",`» All : \`${msg.guild.memberCount}\`
-» Online : \`${msg.guild.members.filter(m=>m.presence.status == 'online').size}\`
-» Do Not Disturb : \`${msg.guild.members.filter(m=>m.presence.status == 'dnd').size}\`
-» Idle : \`${msg.guild.members.filter(m=>m.presence.status == 'idle').size}\`
-» Offline : \`${msg.guild.members.filter(m=>m.presence.status == 'offline').size}\`
-» Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`| » Bans : \`${bans.size}\`
+.setTitle(`Guild Name : \`${msg.guild.name}\``) //wait
+.addField("Guild ID",`\`${msg.guild.id}\`` ,true)
+.addField("Owner",`${msg.guild.owner}` ,true)
+.addField("Region",`\`${msg.guild.region}\`` ,true)
+.addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\`` ,true)
+.addField("Lastest member",`${Array.from(msg.channel.guild.members.values()).sort((a, b) => b.joinedAt - a.joinedAt).map(m => `<@!${m.id}>`).splice(0, 1)}`,true)
+.addField("Created at",`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}` ,true)
+.addField("Verification level",`\`${msg.guild.verificationLevel}\` | \`${verifyL[msg.guild.verificationLevel]}\`` ,true)
+.addField("Members",`All : \`${msg.guild.memberCount}\`
+Online : \`${msg.guild.members.filter(m=>m.presence.status == 'online').size}\`
+Do Not Disturb : \`${msg.guild.members.filter(m=>m.presence.status == 'dnd').size}\`
+Idle : \`${msg.guild.members.filter(m=>m.presence.status == 'idle').size}\`
+Offline : \`${msg.guild.members.filter(m=>m.presence.status == 'offline').size}\` 
+Bots : \`${msg.guild.members.filter(m=>m.user.bot).size}\`| » Bans : \`${bans.size}\`
 ` ,true)
-.addField("↬ | Guild Rooms",`» All : **\`\`${msg.guild.channels.size}\`\`**
-» Voice : **\`\`${msg.guild.channels.filter(m => m.type === 'voice').size}\`\`**
-» Text : **\`\`${msg.guild.channels.filter(m => m.type === 'text').size}\`\`**
-» Category : **\`\`${msg.guild.channels.filter(m => m.type === 'category').size}\`\`**  
-» More ? : **\`$channels\`**` ,true)
-.addField("↬ | Guild Roles",`» \`${msg.guild.roles.size}\`
+.addField("Guild Channels",`All : **\`\`${msg.guild.channels.size}\`\`**
+Voice : **\`\`${msg.guild.channels.filter(m => m.type === 'voice').size}\`\`**
+Text : **\`\`${msg.guild.channels.filter(m => m.type === 'text').size}\`\`**
+Category : **\`\`${msg.guild.channels.filter(m => m.type === 'category').size}\`\`**  
+More ? : **\`$channels\`**` ,true)
+.addField("Guild Roles",`» \`${msg.guild.roles.size}\`
 » More ? : \`$roles\`` ,true)
 .setThumbnail(msg.guild.iconURL)
 .setFooter(client.user.username,client.user.avatarURL)
@@ -113,4 +113,7 @@ msg.channel.send(server)
  
 });
 }
-})
+})// wait hold on why prefix are !? 
+//so if we change prefix it changes
+// you know u cant code dat i am right?
+// if u need it go to discord-spec and add codes here everything make it embed

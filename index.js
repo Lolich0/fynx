@@ -14,7 +14,7 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
-  client.user.setActivity(`Ultra Bot !help`, { type: "LISTENING" });
+  client.user.setActivity(`!help`, { type: "LISTENING" });
 });
 
 const https = require("https");
@@ -153,33 +153,52 @@ client.on("message", msg => {
 });
 
 
+
 client.on('message', msg => {
- const uptime = client.uptime;
 if(msg.content.startsWith("!bot"))  {
-    let uptime = client.uptime;
-    let days = Math.round(uptime * 1.1574E-8);
-    let hours = Math.round(uptime * 2.7778E-7);
-    let minutes = Math.round(uptime * 1.6667E-5);
-    let inline = true //did you fucking copypaste rn?
-    let bicon = bot.user.displayAvatarURL;
-    let usersize = bot.users.size
-    let chansize = bot.channels.size
-    let uptimxd = bot.uptime 
-    let servsize = bot.guilds.size
-    let bot = new Discord.MessageEmbed()
-      .setColor("#0bbafe")
-      .setTitle(`Support server: \`\`soon\`\``, true)
-      .addField("**Bot Name**", `🚀 ${bot.user.username}`, inline)
-    .addField("**Bot Developers**", "! HΣXXX✨#0005 Real#0005 ! DarkBoy🍭#6666", inline )
+   let inline = true
+    let usersize = client.users.size
+    let chansize = client.channels.size
+    let uptimxd = client.uptime 
+    let servsize = client.guilds.size
+    let botembed = new Discord.MessageEmbed()
+    .setColor("#00ff00")
+    .addField("**Bot Name**", `🚀 ${client.user.username}`, inline)
+    .addField("**Bot Developers**", "", inline )
     .addField("**Servers**", `🛡 ${servsize}`, inline)
     .addField("**Channels**", `📁 ${chansize}`, inline)
     .addField("**Users**", `💜 ${usersize}`, inline)
     .addField("**Bot Library**", "🌎 Discord.js", inline)
-    .addField("**Created On**", bot.user.createdAt)
-    .setFooter(`Requested by ${msg.author.tag}`) 
-      .setTimestamp()
+    .addField("**Created On**", client.user.createdAt)
       .setThumbnail(msg.guild.iconURL)
       .setFooter(client.user.username, client.user.avatarURL)
       .setTimestamp();
-  msg.channel.send(bot)
+  msg.channel.send(botembed)
 }})
+
+
+
+  function sendbotstatus() {
+      let uptime = client.uptime;
+      let days = Math.round(uptime * 1.1574E-8);
+      let hours = Math.round(uptime * 2.7778E-7);
+      let minutes = Math.round(uptime * 1.6667E-5);
+      let bot = new Discord.MessageEmbed()
+      .setColor("#0bbafe")
+      .setTitle(`Support server: \`\`soon\`\``, true)
+      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min\``, true)
+      .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
+      .addField("Developers", '`! HΣXXX✨#0005 Real#0005 \n! DarkBoy🍭#6666`', true) 
+      .addField("Guilds", `\`${client.guilds.cache.size - 100}\``)
+      .addField("Prefix", "`!`", true)//edit it idk
+      .setThumbnail("https://cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png")
+      .setFooter(client.user.username, "https://cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png")
+      .setTimestamp();
+  client.channels.get("709387695419424851").send(bot)
+}
+
+
+
+
+
+ setInterval(sendbotstatus, 60000);

@@ -138,15 +138,15 @@ let args = msg.content.split(' ');
 if(args[0].toLowerCase() == `${prefix}server`) {
 let server = new Discord.MessageEmbed()
 .setColor("#0bbafe")
-.setTitle(`Guild Name : \`${msg.guild.name}\``, true)
-.addField("Guild ID",`\`${msg.guild.id}\``, true )
-.addField("Owner",`${msg.guild.owner}` , true)
-.addField("Region",`\`${msg.guild.region}\``)
-.addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\``)
-.addField("Created at",`\`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}\``) //hey i think ,true looks better
-.addField("Verification level",`\`\`${msg.guild.verificationLevel}\`\``)
-.addField("Guild Channels",`\`${msg.guild.channels.size}\``)
-.addField("Guild Roles",`\`${msg.guild.roles.size}\``)
+.setTitle(`Guild Name : \`${msg.guild.name}\``,true)
+.addField("Guild ID",`\`${msg.guild.id}\``,true) 
+.addField("Owner",`${msg.guild.owner}`,true) // ok try it noob
+.addField("Region",`\`${msg.guild.region}\``,true)
+.addField("AFK channel",`\`${msg.guild.afkChannel || 'Not Found'}\``,true)
+.addField("Created at",`\`${moment(msg.guild.createdAt).format("D/MM/YYYY h:mm")}\``,true) //hey i think ,true looks better
+.addField("Verification level",`\`\`${msg.guild.verificationLevel}\`\``,true)
+.addField("Guild Channels",`\`${msg.guild.channels.cache.size}\``,true)//dont add here
+.addField("Guild Roles",`\`${msg.guild.roles.cache.size}\``)
 .setThumbnail(msg.guild.iconURL)
 .setFooter(client.user.username,client.user.avatarURL)
 .setTimestamp()

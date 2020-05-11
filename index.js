@@ -160,18 +160,26 @@ if(msg.content.startsWith("!bot"))  {
     let days = Math.round(uptime * 1.1574E-8);
     let hours = Math.round(uptime * 2.7778E-7);
     let minutes = Math.round(uptime * 1.6667E-5);
-    let server = new Discord.MessageEmbed()
+    let inline = true //did you fucking copypaste rn?
+    let bicon = bot.user.displayAvatarURL;
+    let usersize = bot.users.size
+    let chansize = bot.channels.size
+    let uptimxd = bot.uptime 
+    let servsize = bot.guilds.size
+    let bot = new Discord.MessageEmbed()
       .setColor("#0bbafe")
       .setTitle(`Support server: \`\`soon\`\``, true)
-      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min\``, true)
-      .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
-      .addField("Developers", '`! HΣXXX✨#0005, Real#0005,! DarkBoy🍭#6666`', true) 
-      .addField("Watching users", `\`${client.guilds.size}\``)
-      .addField("Watching rooms", `\`${client.channels.size}\``)
-      .addField("Watching guilds", `\`${client.channels.size}\``)
-      .addField("Prefix", "`!`", true)//edit it idk
+      .addField("**Bot Name**", `🚀 ${bot.user.username}`, inline)
+    .addField("**Bot Developers**", "! HΣXXX✨#0005 Real#0005 ! DarkBoy🍭#6666", inline )
+    .addField("**Servers**", `🛡 ${servsize}`, inline)
+    .addField("**Channels**", `📁 ${chansize}`, inline)
+    .addField("**Users**", `💜 ${usersize}`, inline)
+    .addField("**Bot Library**", "🌎 Discord.js", inline)
+    .addField("**Created On**", bot.user.createdAt)
+    .setFooter(`Requested by ${msg.author.tag}`) 
+      .setTimestamp()
       .setThumbnail(msg.guild.iconURL)
       .setFooter(client.user.username, client.user.avatarURL)
       .setTimestamp();
-  
+  msg.channel.send(bot)
 }})

@@ -26,7 +26,7 @@ client.on("ready", () => {
 ┃Giveaway Part: Loaded successfully                                            ┃
 ┃Giveaway Part: Loaded All Commands                                            ┃
 ┃                                                                              ┃
-┃                     Logged in as ${client.user.tag}                          ┃
+┃                     Logged in as ${client.user.tag}                     ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`);
 }); 
 
@@ -87,7 +87,7 @@ client.on("message", (message) => {
         let messageID = args[0];
       if(!messageID) messageID = "**None**";
         client.giveawaysManager.reroll(messageID).then(() => {
-            message.channel.send("Success! Giveaway rerolled!");
+            message.channel.send("Giveaway rerolled!");
         }).catch((err) => {
             message.channel.send("No giveaway found for "+messageID+", please check and try again");
         });
@@ -100,12 +100,13 @@ client.on("message", (message) => {
       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
       message.delete();
         let messageID = args[0];
-      client.giveawaysManager.delete(messageID).then(() => {
-            message.channel.send("Success! Giveaway Ended!");
+      client.giveawaysManager.edit(messageID, {
+      setEndTimestamp: Date.now()+1
         }).catch((err) => {
           if(!messageID) messageID = "**None**";
             message.channel.send("No giveaway found for "+messageID+", please check and try again");
         });
+      message.channel.send("Successfully ended!")
     }
 });
 

@@ -204,7 +204,7 @@ client.on("message", message => {
       });
   }
   if (message.content.toLowerCase() === "!unlock") {
-    if (!message.channel.type == "dm") return;
+    if (!message.channel.type == "dm") return; 
 
     if (!message.member.hasPermission("MANAGE_MESSAGES"))
       return message.channel.send(one);

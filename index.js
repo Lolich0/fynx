@@ -15,7 +15,7 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
-  client.user.setActivity(`Use c`, { type: "LISTENING" });
+  client.user.setActivity(`Use command cmds `, { type: "LISTENING" });
 });
 
 const https = require("https");
@@ -144,7 +144,7 @@ message.channel.send(embed)
  }
   });
 //no the old one is shit
-//ارجع للكود القديم DO IT OR KICK NOW
+//ارجع للكود القديم DO IT OR KICK NOW //you DO IT NOW 
 client.on('message', message => {
     if (message.content === ('!bot')) {
         let bot = new Discord.MessageEmbed()

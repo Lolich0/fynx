@@ -26,7 +26,7 @@ client.on("ready", () => {
 ┃Giveaway Part: Loaded successfully                                            ┃
 ┃Giveaway Part: Loaded All Commands                                            ┃
 ┃                                                                              ┃
-┃                     Logged in as ${client.user.tag}                     ┃
+┃                     Logged in as ${client.user.tag}                          ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`);
 }); 
 

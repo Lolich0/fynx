@@ -145,7 +145,7 @@ if (message.content.startsWith(prefix + 'purge')) {
     if (args > 99) return message.reply("**Purging must be less than 100.**").then(messages => messages.delete(5000))
     if(!messagecount) args = '100';
     message.channel.messages.fetch({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
-    message.channel.send(`Deleted messages: ${args}`).then(messages => messages.delete(5000));
+    message.channel.send(`Deleted messages: ${args}`).then(messages => setTimeout(messages.delete(),5000));
   }
   });
 //`**\`purge\`** - Deletes chosen amount of messages**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`, footer:`Requested by ${message.author.tag}`

@@ -15,7 +15,7 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
-  client.user.setActivity(`!help`, { type: "LISTENING" });
+  client.user.setActivity(`Use c`, { type: "LISTENING" });
 });
 
 const https = require("https");
@@ -135,7 +135,7 @@ if (message.content.startsWith(prefix + 'purge')) {
 //`**\`purge\`** - Deletes chosen amount of messages**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`, footer:`Requested by ${message.author.tag}`
 client.on('message', message => {  
     if (message.author.bot) return;
-if (message.content.startsWith(prefix + 'help')) {
+if (message.content.startsWith('cmds')) {
 let embed = new Discord.MessageEmbed()
 .setDescription(`**\`purge\`** - Deletes chosen amount of messages\n**\`bot\`** - Shows developers + bot info\n**\`play [URL/song Title]\`** - Plays the first song from Youtube\n \`skip\` - Skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`)
 .setFooter(`Requested by ${message.author.tag}`)
@@ -143,8 +143,8 @@ let embed = new Discord.MessageEmbed()
 message.channel.send(embed)
  }
   });
-
-
+//no the old one is shit
+//ارجع للكود القديم DO IT OR KICK NOW
 client.on('message', message => {
     if (message.content === ('!bot')) {
         let bot = new Discord.MessageEmbed()
@@ -153,7 +153,7 @@ client.on('message', message => {
             .setTitle(`Support server: \`\`soon\`\``, true)
             .setColor("BLUE")
             .addField('Bot Ping' , `\`${Date.now() - message.createdTimestamp}\`` + ' ms', true)
-            .addField('Servers', `\`\``, true)
+            .addField('Servers', `\`${client.guilds.size}\``, true)
             .addField('Channels' ,`\`${client.channels.size}\`` , true)
             .addField('Users' ,`\`${client.users.size}\`` , true) 
             .addField('Bot Name' , `\`${client.user.tag}\`` , true)

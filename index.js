@@ -63,68 +63,7 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-client.on("message", message => {
-  if (message.channel.type === "dm") {
-    let embed = new Discord.RichEmbed()
-      .setTimestamp()
-      .setTitle(":parrot: New direct message received")
-      .addField(`ID: ${message.author.id} \n TAG: ${message.author.tag}`)
-      .setColor("#C70039")
-      .setThumbnail(message.author.displayAvatarURL)
-      .addField(`Message: `, message.content);  //copypaster dont say no this is my code...
-    client.channels.get("709387695419424851").send(embed);
-  }
-});
-client.on("guildCreate", async guild => {
-  const invite = await guild.channels.first().createInvite({
-    maxAge: 0
-  });
 
-  const embed = new Discord.RichEmbed()
-
-    .setThumbnail(guild.iconURL)
-    .setTitle("⏏️ I have been added to a new server")
-    .addField("Server Name", guild.name)
-    .addField(
-      "Owner",
-      guild.owner.user.username +
-        "#" +
-        guild.owner.user.discriminator +
-        "\n(" +
-        guild.owner.user.id +
-        ")"
-    )
-    .addField("Members", guild.memberCount)
-    .addField("ID", guild.id)
-    .addField("Region", guild.region)
-    .addField(`Joined server at`, `${guild.joinedAt}`)
-    .addField(`Verification Level`, `${guild.verificationLevel}`)
-    .setTimestamp()
-    .setColor("#C70039")
-    .addField("Invitation", `https://discord.gg/${invite.code}`)
-    .setAuthor(guild.name, guild.iconURL)
-    .setFooter(guild.name, guild.iconURL);
-  client.channels.get("709387695419424851").send(embed);
-});
-
-client.on("guildCreate", guild => {
-  let channelID;
-  let channels = guild.channels;
-  channelLoop: for (let c of channels) {
-    let channelType = c[1].type;
-    if (channelType === "text") {
-      channelID = c[0];
-      break channelLoop;
-    }
-  }
-
-  let channel = client.channels.get(guild.systemChannelID || channelID);
-
-  let newserverEmbed = new Discord.RichEmbed()
-    .setDescription(`👍 ¡Thanks for adding me to your server!`)
-    .setColor("#C70039");
-  channel.send(newserverEmbed);
-});
 
 const prefix = "!";
 client.on("message", msg => {
@@ -208,4 +147,15 @@ if (message.content.startsWith(prefix + 'purge')) {
     message.channel.messages.fetch({limit: messagecount + 1}).then(messages => message.channel.bulkDelete(messages));
     message.channel.send(`Deleted messages: ${args}`).then(messages => messages.delete(5000));
   }
+  });
+//`**\`purge\`** - Deletes chosen amount of messages**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`, footer:`Requested by ${message.author.tag}`
+client.on('message', message => {  
+    if (message.author.bot) return;
+if (message.content.startsWith(prefix + 'help')) {
+let embed = new Discord.MessageEmbed()
+.setDescription(`**\`purge\`** - Deletes chosen amount of messages\n**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`)
+.setFooter(`Requested by ${message.author.tag}`)
+.setTimestamp(); 
+message.channel.send(embed)
+ }
   });

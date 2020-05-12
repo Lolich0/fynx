@@ -160,3 +160,44 @@ let embed = new Discord.MessageEmbed()
 message.channel.send(embed)
  }
   });
+
+
+
+
+client.on("message", message => {
+  const one = new Discord.MessageEmbed();
+  one.setTitle("Missing permissions!")
+  one.setDescription(message.author + ", You don't have permissions to use this command!")
+  const two = new Discord.MessageEmbed();
+  two.setTitle("Missing permissions!")
+  two.setDescription(message.author + ", You don't have permissions to use this command!")
+  const three = new Discord.MessageEmbed();
+  const four = new Discord.MessageEmbed();
+
+  if (message.content.toLowerCase() === "!lock") {
+    if (!message.channel.type == "dm") return;
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.channel.send(one);
+    message.channel
+      .overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: false
+      })
+      .then(() => {
+        message.reply("**:white_check_mark: Channel has been locked.**");
+      });
+  }
+  if (message.content.toLowerCase() === "!unlock") {
+    if (!message.channel.type == "dm") return;
+
+    if (!message.member.hasPermission("MANAGE_MESSAGES"))
+      return message.channel.send(one);
+    message.channel
+      .overwritePermissions(message.guild.id, {
+        SEND_MESSAGES: true
+      })
+      .then(() => {
+        message.reply("**:white_check_mark: Channel has been Opened.**");
+      });
+  }
+});

@@ -4,6 +4,7 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
+require("./gw.js")
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
@@ -26,7 +27,7 @@ setInterval(() => {
   https.get(`https://ultra-bot-.glitch.me/`);
 }, 280000);
 
-client.login(settings.token_bot);
+client.login(process.env.TOKEN);
 client.on("message", async message => {
   const prefix = settings.prefix;
 
@@ -153,7 +154,7 @@ client.on('message', message => {
     if (message.author.bot) return;
 if (message.content.startsWith(prefix + 'help')) {
 let embed = new Discord.MessageEmbed()
-.setDescription(`**\`purge\`** - Deletes chosen amount of messages\n**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`)
+.setDescription(`**\`purge\`** - Deletes chosen amount of messages\n**\`bot\`** - Shows developers + bot info\n**\`play [URL/song Title]\`** - Plays the first song from Youtube\n \`skip\` - Skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`)
 .setFooter(`Requested by ${message.author.tag}`)
 .setTimestamp(); 
 message.channel.send(embed)

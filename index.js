@@ -14,9 +14,9 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 client.player = player;
 
 client.on("ready", () => {
-  console.log("The bot is ready !"); // If the bot is ready it sends a message in the console
-  client.user.setActivity(`Use command cmds `, { type: "LISTENING" });
-});
+  console.log("The bot is ready !"); 
+  client.user.setActivity(`Use !help`, { type: "LISTENING" }); 
+});// n
 
 const https = require("https");
 app.get("/", (request, response) => {
@@ -93,6 +93,23 @@ client.on("message", msg => {
 
 
 
+client.on('message', msg => {
+if(msg.content.startsWith("!bot"))  {
+   let uptime = client.uptime;
+      let days = Math.round(uptime * 1.1574E-8);
+      let hours = Math.round(uptime * 2.7778E-7);
+      let minutes = Math.round(uptime * 1.6667E-5);
+      let bot = new Discord.MessageEmbed()
+      .setColor("#0bbafe")
+      .setThumbnail('https://images-ext-1.discordapp.net/external/la19W6I3qhW1rS-mTyMo1AT5dygAHgA5Gf-gMfrcpV4/https/cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png')
+      .setTitle(`Support server: \`\`soon\`\``, true)
+      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min\``, true)
+      .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
+      .addField("Developers", '`! HΣXXX✨#0005` `Real#0005` `! DarkBoy🍭#6666`') 
+      .setFooter(client.user.username, msg.author.avatarURL)
+      .setTimestamp(); // LOOK AT IT
+  msg.channel.send(bot) //ok cya ima go better
+}})
 
 
 
@@ -135,7 +152,7 @@ if (message.content.startsWith(prefix + 'purge')) {
 //`**\`purge\`** - Deletes chosen amount of messages**\`bot\`** - Shows Developers + Bot Info\n**\`play [URL/song Title]\`** - Plays The First Song From Youtube\n \`skip\` - skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`, footer:`Requested by ${message.author.tag}`
 client.on('message', message => {  
     if (message.author.bot) return;
-if (message.content.startsWith('cmds')) {
+if (message.content.startsWith(prefix + 'help')) {
 let embed = new Discord.MessageEmbed()
 .setDescription(`**\`purge\`** - Deletes chosen amount of messages\n**\`bot\`** - Shows developers + bot info\n**\`play [URL/song Title]\`** - Plays the first song from Youtube\n \`skip\` - Skips the currents song\n **\`stop\`** - Stops the music and leave the voice channel.\n **\`queue\` - ** Shows the music queue.\n **\`np\` - ** Shows what is playing now.\n **\`pause\` - ** Stops the song for short time.\n **\`repeat\`** - Repeats the song that is playing now.\n **\`resume\`** - Continue playing from when songs got paused.\n **\`cq\`** - Clears all the queue.\n **\`volume\`** - Changes the volume of the songs.\n **\`shuffle\`** - Plays a song from queue randomly.\n **\`server\`** - Shows all server info`)
 .setFooter(`Requested by ${message.author.tag}`)
@@ -143,25 +160,25 @@ let embed = new Discord.MessageEmbed()
 message.channel.send(embed)
  }
   });
-//no the old one is shit
-//ارجع للكود القديم DO IT OR KICK NOW //you DO IT NOW 
-client.on('message', message => {
-    if (message.content === ('!bot')) {
-        let bot = new Discord.MessageEmbed()
-            .setAuthor(client.user.username,client.user.avatarURL)
-            .setThumbnail(client.user.avatarURL)
-            .setTitle(`Support server: \`\`soon\`\``, true)
-            .setColor("BLUE")
-            .addField('Bot Ping' , `\`${Date.now() - message.createdTimestamp}\`` + ' ms', true)
-            .addField('Servers', `\`${client.guilds.size}\``, true)
-            .addField('Channels' ,`\`${client.channels.size}\`` , true)
-            .addField('Users' ,`\`${client.users.size}\`` , true) 
-            .addField('Bot Name' , `\`${client.user.tag}\`` , true)
-            .addField('Bot Owner' , '`! HΣXXX✨#0005` `Real#0005` \n`! DarkBoy🍭#6666`' , true) 
-            .setFooter(message.author.username, message.author.avatarURL)
-            message.channel.send(bot)
-}
-});
+
+//ارجع للكود القديم DO IT OR KICK NOWDO IT NOW 
+client.on('message', msg => {
+if(msg.content.startsWith("!bot"))  {
+   let uptime = client.uptime;
+      let days = Math.round(uptime * 1.1574E-8);
+      let hours = Math.round(uptime * 2.7778E-7);
+      let minutes = Math.round(uptime * 1.6667E-5);
+      let bot = new Discord.MessageEmbed()
+      .setColor("#0bbafe")
+      .setThumbnail('https://images-ext-1.discordapp.net/external/la19W6I3qhW1rS-mTyMo1AT5dygAHgA5Gf-gMfrcpV4/https/cdn.discordapp.com/avatars/709293738094100571/a1f10dc96ad0a02e0b662153a5fec5c2.png')
+      .setTitle(`Support server: \`\`soon\`\``, true)
+      .addField("Uptime", `\`${days} days, ${hours} hrs, ${minutes} min\``, true)
+      .addField("Created at",`\`${moment(client.user.createdAt).format("D/MM/YYYY h:mm")}\``, true)
+      .addField("Developers", '`! HΣXXX✨#0005` `Real#0005` `! DarkBoy🍭#6666`') 
+      .setFooter(client.user.username, msg.author.avatarURL)
+      .setTimestamp(); // LOOK AT IT
+  msg.channel.send(bot) //ok cya ima go better
+}})
 
 client.on("message", message => {
   const one = new Discord.MessageEmbed();

@@ -139,8 +139,18 @@ client.on('message', message => {
     if (message.author.bot) return;
 if (message.content.startsWith(prefix + 'purge')) {
     if(!message.channel.guild) return message.reply('this command for servers only,');
-        if(!message.member.hasPermission('MANAGE_MESSAGES')) return message.channel.send('You dont have **MANAGE_MESSAGES** permissions!');
-        if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) return message.channel.send('I dont have \`\`MANAGE_MESSAGES\`\` permission!');
+        if(!message.member.hasPermission('MANAGE_MESSAGES')) 
+var embed3 = new Discord.MessageEmbed()
+.setDescription('You dont have \`\`MANAGE_MESSAGES\`\` permission')
+.setColor("RED")
+.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
+return message.channel.send(embed3);
+        if(!message.guild.member(client.user).hasPermission('MANAGE_MESSAGES')) 
+var embed4 = new Discord.MessageEmbed()
+.setDescription()
+.setColor("RED")
+.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
+return message.channel.send('!');
  let args = message.content.split(" ").slice(1)
     let messagecount = parseInt(args);
     if (args > 99) return message.reply("**Purging must be less than 100.**").then(messages => messages.delete(5000))
@@ -182,6 +192,9 @@ if(msg.content.startsWith("!bot"))  {
 
 client.on("message", message => {
   const one = new Discord.MessageEmbed();
+.setDescription('You dont have \`\`C_MESSAGES\`\` permission')
+.setColor("RED")
+.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
   one.setTitle("Missing permissions!")
   one.setDescription(message.author + ", You don't have permissions to use this command!")
   const two = new Discord.MessageEmbed();

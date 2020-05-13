@@ -3,10 +3,12 @@ const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
 	if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply("Sorry you can't do that!").then(msg => msg.delete(3000));
-	if (!args[0]) 
-var embed = new Discord.RichEmbed()
-.setDescription('**Error**\nUsage: !prefix [prefix]')
-return message.channel.send(embed);
+	if (!args[0]) var embed2 = new Discord.MessageEmbed()
+.setFooter("Ultra Bot © 2020-2025, Discord Bot - All Rights Reserved")
+.setColor("RED")
+.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1")
+.setDescription(`Usage: \`\`!prefix [Custom Prefix]\`\``);
+return message.channel.send(embed2);
 	let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
 
 	prefixes[message.guild.id] = {

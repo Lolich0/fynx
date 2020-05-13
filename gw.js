@@ -16,30 +16,18 @@ const manager = new GiveawaysManager(client, {
         reaction: "🎉"
     }
 });
-// We now have a giveawaysManager property to access the manager everywhere!
+
+
 client.giveawaysManager = manager;
 
-client.on("ready", () => {
-    console.log(`
-┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-┃                                Loading!...                                   ┃
-┃Giveaway Part: Loaded successfully                                            ┃
-┃Giveaway Part: Loaded All Commands                                            ┃
-┃                                                                              ┃
-┃                     Logged in as ${client.user.tag}                     ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛`);
-}); 
-
-client.login(process.env.TOKEN);
+//Start giveaway\\
 client.on("message", (message) => {
-    const ms = require("ms"); // npm install ms
+    const ms = require("ms"); 
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     if(command === "start"){
       if (!message.member.hasPermission("ADMINISTRATOR"))  return;
       message.delete();
-        // g!start-giveaway 2d 1 Awesome prize!
-        // will create a giveaway with a duration of two days, with one winner and the prize will be "Awesome prize!"
     let time = args[0];
                       let winners = args[1];
                       let prize = args.slice(2).join(" ")
@@ -70,13 +58,15 @@ client.giveawaysManager.start(message.channel, {
             minutes: "minutes",
             hours: "hours",
             days: "days",
-            pluralS: true // Not needed, because units end with a S so it will automatically removed if the unit value is lower than 2
+            pluralS: true
          }
     }
 });
     }
 });
 
+
+//Reroll giveaway\\
 client.on("message", (message) => {
     const ms = require("ms"); 
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
@@ -93,6 +83,9 @@ client.on("message", (message) => {
         });
     }
 });
+
+
+//End giveaway\\
 client.on("message", (message) => {
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
@@ -109,4 +102,3 @@ client.on("message", (message) => {
       message.channel.send("Successfully ended!")
     }
 });
-

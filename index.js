@@ -192,14 +192,16 @@ if(msg.content.startsWith("!bot"))  {
 
 client.on("message", message => {
   const one = new Discord.MessageEmbed();
-.setDescription('You dont have \`\`C_MESSAGES\`\` permission')
-.setColor("RED")
-.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
-  one.setTitle("Missing permissions!")
-  one.setDescription(message.author + ", You don't have permissions to use this command!")
+one.setDescription('You dont have \`\`MANAGE_CHANNELS\`\` permission')
+one.setColor("RED")
+one.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
+one.setDescription('You dont have \`\`MANAGE_CHANNELS\`\` permission')
+one.setColor("RED")
+one.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
   const two = new Discord.MessageEmbed();
-  two.setTitle("Missing permissions!")
-  two.setDescription(message.author + ", You don't have permissions to use this command!")
+two.setDescription('You dont have \`\`MANAGE_CHANNELS\`\` permission')
+two.setColor("RED")
+two.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1");
   const three = new Discord.MessageEmbed();
   const four = new Discord.MessageEmbed();
 

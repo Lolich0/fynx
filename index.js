@@ -15,14 +15,15 @@ client.on("ready", () => {
   console.log("The bot is ready !"); 
 });// n
 
-const https = require("https");
+const http = require("http");
 app.get("/", (request, response) => {
+  console.log(Date.now() + "Glitch 24/7: PING Received!");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  https.get(`https://ultra-bot-.glitch.me/`);
-}, 280000);
+  http.get(`http://crawl-music-.glitch.me/`);
+}, 100000);
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

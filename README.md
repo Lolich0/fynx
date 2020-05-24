@@ -1,4 +1,4 @@
-# Ultra Bot 2020 | Dashboard Soon
+# Crawl Bot 2020 | Dashboard Soon
 
 Go to the folder `config` then the file `config.json`.
 For the bot to be able to start, please complete the file with your credentials as follows :

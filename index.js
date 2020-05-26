@@ -13,7 +13,7 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("The bot is ready !"); 
-});// n
+});
 
 const http = require("http");
 app.get("/", (request, response) => {
@@ -22,13 +22,12 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://crawl-music-.glitch.me/`);
+  http.get(`http://.glitch.me/`);
 }, 100000);
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {
   const prefix = settings.prefix;
-
   const messageArray = message.content.split(" ");
   const cmd = messageArray[0].toLowerCase();
   const args = messageArray.slice(1);

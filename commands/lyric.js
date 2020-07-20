@@ -4,6 +4,13 @@
 const Discord = require('discord.js')
 
 exports.run = async (client, message, args) => {
+  const kufurr = new Discord.MessageEmbed()
+.setColor(0x36393E)
+.setAuthor("Harmony Music")
+.setDescription(`Lyrics bulabilmek için lütfen Türkçe harf kullanmayınız.`);
+  
+  const kufur = ["ş","ç","ö","ü","ğ","ı","Ş","Ç","Ö","Ü","Ğ","İ"]
+  if (kufur.some(word => message.content.includes(word))) return message.channel.send(kufurr)   
   
     args.song = args.join(' ');
 
@@ -12,13 +19,13 @@ const lyric = require('../ek/lyrics')
   let yanıt = await lyric(`/song/${args.song}`);
 
   if (yanıt.error) {
-    const embed = new Discord.RichEmbed()
+    const embed = new Discord.MessageEmbed()
     .setColor(0x36393E)
     .setTitle('Bulunamadı.')
-    .setDescription(`**${args.song}** adında lyrics bulunamadı. Doğru şarkıyı aradığına eminsen arama terimine şarkı sahibinide ekle ve yeniden dene.`)
+    .setDescription(`**${args.song}** adında lyrics bulunamadı. Doğru şarkıyı aradığına eminsen arama terimine şarkı sahibini ekleyip ve yeniden deneyiniz.`)
     return await message.channel.send(embed);
   }
-const bmended = new Discord.RichEmbed()
+const bmended = new Discord.MessageEmbed()
 .setColor(0x36393E)
 .setAuthor(yanıt.artist.name, yanıt.artist.image)
 .setTitle(yanıt.name)
@@ -29,17 +36,10 @@ const bmended = new Discord.RichEmbed()
   await message.channel.send(bmended);
 };
 
-exports.conf = {
-  enabled: true,
-  guildOnly: false,
-  aliases: [],
-  permLevel: 0  
+exports.config = {
+  name: 'lyrics',
+  aliases: []
 };
 
-exports.help = {
-  name: 'lyrics',
-  description: 'Belirtilen şarkının sözlerini atar.',
-  category:'Kullanıcı',
-  usage: 'lyrics [ŞARKI] [ARTIST]',
-};
+
 

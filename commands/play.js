@@ -5,7 +5,7 @@ const embedFail = "#f30707";
 
 module.exports.run = async (client, message, args) => {
 
-    if(!message.member.voice.channel) return message.channel.send({embed: {color: embedFail, description: `You must be in a voice channel!` }})
+    if(!message.member.voice.channel) return message.channel.send({embed: {color: embedFail, description: `Şu anda çalan müziği duraklatabilmek için bir ses kanalında olmanız gerekmektedir!` }})
 
     if (!args[0]) return message.channel.send({embed: {color: embedFail, description: `Please enter something to be searched!` }})
   

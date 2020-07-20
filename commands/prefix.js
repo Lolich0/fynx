@@ -2,14 +2,14 @@ const Discord = require("discord.js");
 const fs = require("fs");
 
 module.exports.run = async (client, message, args) => {
-	if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply("Sorry you can't do that!").then(msg => msg.delete(3000));
+	if (!message.member.hasPermission("MANAGE_GUILD")) return message.reply("Prefix(Ön Ek)'i değiştirebilmek için `Sunucuyu Yönet` yetkisine sahip olmanız gerekmektedir!").then(msg => msg.delete(3000));
 	if (!args[0]) var embed2 = new Discord.MessageEmbed()
-.setFooter("Harmony © 2020-2025, Discord Bot - All Rights Reserved")
+.setFooter("Harmony © 2020, Tüm Hakları Saklıdır.")
 .setColor("RED")
-.setAuthor(`Error !`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1")
-.setDescription(`Usage: \`\`!prefix [Custom Prefix]\`\``);
+.setAuthor(`Hata!`,"https://cdn.discordapp.com/emojis/671444290102362141.gif?v=1")
+.setDescription(`Örnek Kullanım: \`\`!prefix [Özel Ön Ek]\`\``);
 return message.channel.send(embed2);
-	let prefixes = JSON.parse(fs.readFileSync("./prefixes.json", "utf8"));
+	let prefixes = JSON.parse(fs.readFileSync("../prefixes.json", "utf8"));
 
 	prefixes[message.guild.id] = {
 		prefixes: args[0]
@@ -23,5 +23,5 @@ return message.channel.send(embed2);
 
 module.exports.config = {
 	name: "prefix",
-	aliases: ["setprefix"]
+	aliases: ["önek", "prefixayarla", "önekayarla", "önek-ayarla", "ön-ekayarla","ön-ek-ayarla", "prefix-ayarla"]
 }

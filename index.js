@@ -22,7 +22,7 @@ app.get("/", (request, response) => {
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://.glitch.me/`);
+  http.get(`http://linen-believed-fiber.glitch.me/`);
 }, 100000);
 
 client.login(process.env.TOKEN);

@@ -12,12 +12,12 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 client.player = player;
 
 client.on("ready", () => {
-  console.log("The bot is ready !"); 
+  console.log("Harmony bot şu anda aktif!"); 
 });
 
 const http = require("http");
 app.get("/", (request, response) => {
-  console.log(Date.now() + "Glitch 24/7: PING Received!");
+  console.log(Date.now() + "7/24 özelliği çalışıyor.");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
@@ -46,11 +46,11 @@ fs.readdir("./commands/", (err, files) => {
   const jsfiles = files.filter(f => f.split(".").pop() === "js");
 
   if (jsfiles.length <= 0) {
-    return console.log("Couldn't find any commands!");
+    return console.log("Herhangi bir komut bulunamadı!");
   }
 
   jsfiles.forEach(file => {
-    console.log(`Loading command ${file}`);
+    console.log(`Yüklenen Komut: ${file}`);
 
     const command = require(`./commands/${file}`);
 

@@ -11,11 +11,11 @@ module.exports.run = async (client, message) => {
 
     client.player.stop(message.guild.id);
 
-    message.channel.send({embed: {color: embedSuccess, description: `Müzik müzikler oynatıldı. Harmony ses kanalından ayrılıyor!!` }})
+    message.channel.send({embed: {color: embedSuccess, description: `Müzik müzikler durduruldu. Harmony ses kanalından ayrılıyor!!` }})
 
 };
 
 module.exports.config = {
-    name: "stop",
-    aliases: []
+    name: "durdur",
+    aliases: ["dur"]
 };

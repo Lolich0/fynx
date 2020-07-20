@@ -16,6 +16,6 @@ module.exports.run = async (client, message) => {
 };
 
 module.exports.config = {
-    name: "clear-queue",
-    aliases: ["cq"]
+    name: "kuyruğu-temizle",
+    aliases: ["kuyruk-temizle"]
 };

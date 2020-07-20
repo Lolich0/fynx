@@ -23,6 +23,6 @@ module.exports.run = async (client, message, args) => {
 };
 
 module.exports.config = {
-    name: "vol",
-    aliases: ["volume", "ses"]
+    name: "ses",
+    aliases: ["ses-seviyesi"]
 };

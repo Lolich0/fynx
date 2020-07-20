@@ -22,6 +22,6 @@ module.exports.run = async (client, message) => {
 };
 
 module.exports.config = {
-    name: "loop",
-    aliases: ["döngü"]
+    name: "döngü",
+    aliases: []
 };

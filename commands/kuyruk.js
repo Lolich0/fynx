@@ -19,6 +19,6 @@ module.exports.run = async (client, message) => {
 
   
 module.exports.config = {
-    name: "queue",
+    name: "kuyruk",
     aliases: []
 };

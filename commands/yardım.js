@@ -2,15 +2,15 @@ const Discord = require('discord.js');
  
 module.exports.run = async(client, message, args) => {
  //OSKOBS
-  let sayfalar = ['İlk Sayfa', '2.Sayfa', 'OOO 3.Yardım Sayfası']; 
+  let sayfalar = ['İlk Sayfa', '2.Sayfa', '3.Sayfa', '4.Sayfa']; 
   let page = 1; 
  
   const embed = new Discord.MessageEmbed()
     .setTitle("Harmony Yardım Menüsü") 
     .setColor("BLUE")
+    .setDescription(`Yardım menüsünü görmeden önce Harmony'i kullandığınız için sizlere teşekkür ederiz. Sizler sayesinde botumuz daha iyi yerlere geliyor. Umarım botumuzu beğenerek kullanıyorsunuzdur. Eksiklerimiz veya hatalarımızı \`!tavsiye\` komutu ile bizimle paylaşabilirsiniz.`)
     .setFooter(`Sayfa ${page} - ${sayfalar.length}`) 
-    .setDescription(sayfalar[page-1])
- 
+
   message.channel.send(embed).then(msg => { 
    
     msg.react('⏪').then( r => { 
@@ -26,8 +26,8 @@ module.exports.run = async(client, message, args) => {
       backwards.on('collect', r => { 
         if (page === 1) return; 
         page--; 
-        embed.setTitle("Yardım Menüsü")
-        embed.setDescription(sayfalar[page-1]); 
+        embed.setTitle("Harmony Yardım Menüsü")
+        embed.setDescription(`Yardım menüsünü görmeden önce Harmony'i kullandığınız için sizlere teşekkür ederiz. Sizler sayesinde botumuz daha iyi yerlere geliyor. Umarım botumuzu beğenerek kullanıyorsunuzdur. Eksiklerimiz veya hatalarımızı \`!tavsiye\` komutu ile bizimle paylaşabilirsiniz.`); 
         embed.setFooter(`Sayfa ${page} - ${sayfalar.length}`);
         embed.setColor("RED") 
         msg.edit(embed) 
@@ -36,8 +36,7 @@ module.exports.run = async(client, message, args) => {
       forwards.on('collect', r => { 
         if (page === sayfalar.length) return; 
         page++; 
-        embed.setTitle("Sayfalı Yardım Menüsü")
-        embed.setDescription(sayfalar[page-1]); 
+        embed.setTitle("Harmony Yardım Menüsü")
         embed.setFooter(`Sayfa ${page} - ${sayfalar.length}`);
         embed.setColor("BLUE") 
         msg.edit(embed) 

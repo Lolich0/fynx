@@ -24,5 +24,6 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.config = {
     name: "ses",
-    aliases: ["ses-seviyesi"]
+    aliases: ["ses-seviyesi"],
+    permlevel: 0
 };

@@ -55,5 +55,6 @@ module.exports.run = (client, message, args) => {
 module.exports.config = {
 name: 'yardım',
 aliases: ["help", "y", "h"],
+    permlevel: 0
 };
  

@@ -17,5 +17,6 @@ module.exports.run = async (client, message) => {
 
 module.exports.config = {
     name: "kuyruğu-temizle",
-    aliases: ["kuyruk-temizle"]
+    aliases: ["kuyruk-temizle"],
+    permlevel: 0
 };

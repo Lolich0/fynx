@@ -16,5 +16,6 @@ module.exports.run = async (client, message) => {
 
 module.exports.config = {
     name: "karıştır",
-    aliases: []
+    aliases: [],
+    permlevel: 0
 };

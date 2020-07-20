@@ -17,5 +17,6 @@ module.exports.run = async (client, message) => {
 
 module.exports.config = {
     name: "atla",
-    aliases: ["geç"]
+    aliases: ["geç"],
+    permlevel: 0
 };

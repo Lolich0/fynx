@@ -14,6 +14,8 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("Harmony bot şu anda aktif!"); 
+  client.user.setActivity('Harmony Music Çok Yakında!');
+  client.user.setStatus('WATCHING');
 });
 
 const http = require("http");
@@ -61,3 +63,13 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 });
+
+client.elevation = message => {
+  if(!message.guild) {
+	return; }
+  let permlvl = 0;
+  if (message.member.hasPermission("BAN_MEMBERS")) permlvl = 2;
+  if (message.member.hasPermission("ADMINISTRATOR")) permlvl = 3;
+  if (message.author.id === "327064201245753344") permlvl = 4;
+  return permlvl;
+};

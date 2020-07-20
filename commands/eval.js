@@ -42,6 +42,3 @@ exports.config = {
   aliases: [],
 
 };
- 
-
-

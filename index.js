@@ -79,3 +79,8 @@ dm.send(botdm)
 if(msg.channel.bot) return;
 });
 
+client.on('message', function(message) {
+  if (message.content === '$deafen') {
+    message.setDeaf(user);
+  }
+});

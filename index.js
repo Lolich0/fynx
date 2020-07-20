@@ -14,20 +14,10 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 client.player = player;
 
 client.on("ready", () => {
-  console.log("Harmony bot şu anda aktif!"); 
-  client.channels.cache.get('734687172241784863').join()
+    console.log("Harmony bot şu anda aktif!"); 
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 
-const http = require("http");
- app.get("/", (request, response) => {
-  console.log(Date.now() + " BOT Aktif.");
-  response.sendStatus(200);
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://linen-believed-fiber.glitch.me`);
-}, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

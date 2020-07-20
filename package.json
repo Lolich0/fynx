@@ -8,7 +8,7 @@
     "node": "12.x"
   },
   "scripts": {
-    "start": "node shard.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",

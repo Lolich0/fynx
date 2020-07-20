@@ -19,14 +19,14 @@ client.on("ready", () => {
 });
 
 const http = require("http");
-app.get("/", (request, response) => {
-  console.log(Date.now() + "7/24 özelliği çalışıyor.");
+ app.get("/", (request, response) => {
+  console.log(Date.now() + " BOT Aktif.");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://linen-believed-fiber.glitch.me/`);
-}, 100000);
+  http.get(`http://linen-believed-fiber.glitch.me`);
+}, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

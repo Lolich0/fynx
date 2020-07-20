@@ -1,11 +1,19 @@
-const { ShardingManager } = require('discord.js');
-const shard = new ShardingManager('./index.js', {
-  token: process.env.TOKEN,
-  autoSpawn: true
+const Discord = require('discord.js');
+const ayarlar = require('./ayarlar.json');
+const bot = new Discord.Client()
+
+const alpike = new Discord.ShardingManager('./index.js', {
+    totalShards: 1,
+    token: ayarlar.codetoken
 });
 
-shard.spawn(2);
+alpike.spawn(); 
 
-shard.on('launch', shard => {
-  console.log(`[SHARD] Shard ${shard.id}/${shard.totalShards}`)
+alpike.on('launch', shard => {
+    console.log(`${shard.id}. Shard açıldı.`);
 });
+
+setTimeout(() => {
+    alpike.broadcastEval("process.exit()");
+}, 21600000);
+

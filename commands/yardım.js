@@ -1,77 +1,58 @@
-const Discord = require('discord.js'); 
+const Discord = require('discord.js');
  
-module.exports.run = async(client, message, args) => {
-  const prefix = '!';
-
-  let sayfalar = ['İlk Sayfa', '2.Sayfa', '3.Sayfa']; 
-  let page = 1; 
-
+module.exports.run = (client, message, args) => {
+ 
+  let pages = [
+              "Yardım menüsünü görmeden önce Harmony'i kullandığınız için sizlere teşekkür ederiz. \nSizler sayesinde botumuz daha iyi yerlere geliyor. \nUmarım botumuzu beğenerek kullanıyorsunuzdur. \nEksiklerimiz veya hatalarımızı `!tavsiye` komutu ile bizimle paylaşabilirsiniz.",
+              '**Kullanıcı Ve Eğlence**\n\n\n  **`g!`8ball = Sorularınızı Yanıtlar** \n **`g!`aşkölçer = Aşkınızı Ölçer.** \n **`g!`çekiç = Çekiç Atarsınız.** \n  **`g!`çayiç = Çay İçersiniz **\n **`g!`döviz = Dövizlere Bakarsınız** \n **`g!`wwegif = Rast Gele Gif Gonderır** \n **`g!`çekiliş = Sunucunuzda Çekiliş Yaparsınız** \n **`g!`mcödül = Ödül Kazanarsınız ** \n **`g!`dcnitro = Avatarınıza Nıtro Ekler** \n **`g!`stresçarkı = Stres Atarsınız ** \n **`g!`invert = Avatarınızın Rengini Ters Renk Yapar** \n **`g!`wasted = Avatarınıza Wasted Effekti Yapar** \n **`g!`top10 = Botun 10 Sunucuda Ne Yaptıgını Gosterır** \n **`g!`yaz = Bota Bir Sey Yazarsınız** \n ',
+              '**Müzik**\n\n\n' + '``-``  .oynat = Youtubeda İstediğiniz Bir Şarkıyı Aratır Ve Oynatır. \n``-``  .duraklat = Oynatılan Şarkıyı Devam Etmek Üzere Durdurur. \n``-``  .devamet = Duraklatılan Şarkıyı Devam Ettir. \n``-``  .geç = Oynatılan Şarkıyı Geçer. \n``-``  .kuyruk = Kuyruk’ta Olan Müzikleri Gösterir. \n``-``  .çalan = Oynatılan Müziği Gösterir. \n``-``  .ses = Ses Seviyesini Ayarlarsınız.',
+              '**Çerçeve/Profil**\n\n\n ' + '``-``  .hacked = Profilinize ``hacked`` Efekti Verir. \n``-``  .triggered = Profilinize ``triggered`` Efekti Verir. \n``-``  .wasted = Profilinize ``wasted`` Efekti Verir. \n``-``  .winner = Profilinize ``winner`` Efekti Verir. \n``-``  .sniper = Profilinize ``sniper`` Efekti Verir. \n``-``  .hpbalance = Profilinize ``hypesquad balance`` Efekti Verir. \n``-``  .hpbravery = Profilinize ``hypesquad bravery`` Efekti Verir. \n``-``  .hpbrilliance = Profilinize ``hypesquad brilliance`` Efekti Verilir. \n``-``  .dcbughunter = Profilinize ``bug hunter`` Efekti Verir. \n``-``  .hpevent = Profilinize ``hypesquad`` Efekti Verir. \n``-``  .dcpartner = Profilinize ``partner`` Efekti Verir. \n``-``  .dcstaff = Profilinize ``staff`` Efekti Verir. \n``-``  .atatürk = Profilinize ``atatürk`` Efekti Verir.',
+              '**Bot Bilgi**\n\n\n' + '``-``  .davet = Bot İle İlgili Bağlantıları Görürsünüz. \n``-``  .ping = Botun Pingini Gösterir. \n``-``  .istatistik = Bo n İstatistiklerini Gösterir.',
+              ];
+  let page = 1;
+ 
   const embed = new Discord.MessageEmbed()
-    .setTitle("Harmony Yardım Menüsü") 
-    .setDescription(`Yardım menüsünü görmeden önce Harmony'i kullandığınız için sizlere teşekkür ederiz. \nSizler sayesinde botumuz daha iyi yerlere geliyor. \nUmarım botumuzu beğenerek kullanıyorsunuzdur. \nEksiklerimiz veya hatalarımızı \`!tavsiye\` komutu ile bizimle paylaşabilirsiniz.`)
-    .setColor("BLUE")
-    .setFooter(`Sayfa ${page} - ${sayfalar.length}`) 
-
-  message.channel.send(embed).then(msg => { 
-   
-    msg.react('⏪').then( r => { 
-      msg.react('⏩') 
-     
-      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id;
-      const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id; 
-     
-      const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 }); 
-      const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 }); 
-     
-      
-      forwards.on('collect', r => { 
-        if (page === 1) return; 
-        page--; 
-        embed.setTitle("Harmony Yardım Menüsü")
-        embed.setDescription(`Yardım menüsünü görmeden önce Harmony'i kullandığınız için sizlere teşekkür ederiz. \nSizler sayesinde botumuz daha iyi yerlere geliyor. \nUmarım botumuzu beğenerek kullanıyorsunuzdur. \nEksiklerimiz veya hatalarımızı \`!tavsiye\` komutu ile bizimle paylaşabilirsiniz.`)
-        embed.setFooter(`Sayfa ${page} - ${sayfalar.length}`);
-        embed.setColor("RED") 
-        msg.edit(embed) 
+    .setColor('RANDOM')
+    .setThumbnail('https://cdn.discordapp.com/attachments/703582257570644029/734646429833756732/HarmonyMusic.png')
+    .setFooter(`Sayfa ${page} / ${pages.length}`)
+    .setDescription(pages[page-1])
+  message.channel.send(embed).then(msg => {
+ 
+  msg.react('⬅')
+  .then(r => {
+    msg.react('➡')
+ 
+      //Filter
+      const backwardsFilter = (reaction, user) => reaction.emoji.name === '⬅' && user.id === message.author.id;
+      const forwardsFilter = (reaction, user) => reaction.emoji.name === '➡' && user.id === message.author.id;
+ 
+      const backwards = msg.createReactionCollector(backwardsFilter, { time: 100000 });
+      const forwards = msg.createReactionCollector(forwardsFilter, { time: 100000 });
+ 
+      forwards.on('collect', r => {
+        if(page === pages.length) return;
+        page++;
+        embed.setDescription(pages[page-1]);
+        embed.setColor('RANDOM')
+        embed.setFooter(`Sayfa ${page} / ${pages.length}`)
+        msg.edit(embed)
       })
- //OSKOBS    
-      forwards.on('collect', r => { 
-        if (page === sayfalar.length) return; 
-        page++; 
-        embed.setTitle("Harmony Yardım Menüsü")
-embed.addField(prefix + 'yardım', `Bütün komutları ve açıklamaları gösterir.`)
-    embed.addField(prefix + 'oynat <Şarkı İsmi>', `Belirtilen isimli şarkıları arar ve bulunduğunuz odaya bağlanıp müziği oynatır.`, true)
-    embed.addField(prefix + 'durdur', `Harmony müzik oynatmayı durdurur ve ses kanalından ayrılır.`)    
-    embed.addField(prefix + 'atla', `Oynatılan olan müziği atlar. Kuyrukta müzik var ise müzikler sırayla oynatılır.`, true)
-    embed.addField(prefix + 'duraklat', `Oynatılan olan müziği duraklatır.`)
-    embed.addField(prefix + 'devam', `Duraklatılan müziği devam ettirir.`, true)
-        embed.setFooter(`Sayfa ${page} - ${sayfalar.length}`);
-        embed.setColor("RED") 
-        msg.edit(embed) 
+      backwards.on('collect', r => {
+        if(page === 1) return;
+        page--;
+        embed.setColor('RANDOM')
+        embed.setDescription(pages[page-1]);
+        embed.setFooter(`Sayfa ${page} / ${pages.length}`)
+        msg.edit(embed)
       })
-      
-      forwards.on('collect', r => { 
-        if (page === sayfalar.length) return; 
-        page++; 
-        embed.setTitle("Harmony Yardım Menüsü")
-                  embed.addField(prefix + 'karıştır', `Müzik kuyruğundaki müzikleri karıştırır.`)
-    embed.addField(prefix + 'döngü', `Müzik kuyruğundaki müzikleri döngü içerisine alır.`, true)    
-    embed.addField(prefix + 'çalan', `Oynatılan olan müziği gösterir.`)
-    embed.addField(prefix + 'kuyruk', `Müzik kuyruğunu gösterir.`, true)
-    embed.addField(prefix + 'kuyruğu-temizle', `Müzik kuyruğunu temizler.`)
-    embed.addField(prefix + 'prefix', `Prefix(Ön Ek)'i değiştirirsiniz.`)
-        embed.setFooter(`Sayfa ${page} - ${sayfalar.length}`);
-        embed.setColor("BLUE") 
-        msg.edit(embed) 
-      })
-   
+ 
     })
- 
   })
- 
-}
-
-module.exports.config = {
- name: 'yardım',
-  aliases: ["sayfalıyardım","pagehelp","h","help"],
-
 };
+ 
+ 
+module.exports.config = {
+name: 'yardım',
+aliases: ["help", "y", "h"],
+};
+ 

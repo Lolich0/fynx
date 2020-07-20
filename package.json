@@ -1,7 +1,8 @@
 {
   "name": "ultrabot",
   "version": "1.0.0",
-  "main": "shard.js",
+  "main": "index.js",
+  "author": "Ultra - Developers",
   "license": "MIT",
   "engines": {
     "node": "12.x"

@@ -1,10 +1,9 @@
 const Discord = require('discord.js');
-const ayarlar = require('./ayarlar.json');
 const bot = new Discord.Client()
 
 const alpike = new Discord.ShardingManager('./index.js', {
-    totalShards: 1,
-    token: ayarlar.codetoken
+    totalShards: "auto",
+    token: process.env.TOKEN
 });
 
 alpike.spawn(); 

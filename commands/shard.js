@@ -3,9 +3,8 @@ const db = require('quick.db');
 const chalk = require('chalk')
 const moment = require('moment');
 require('moment-duration-format');
-const ayarlar = require('../ayarlar.json');
 
-module.exports.run = async (client, message, args) => {
+exports.run = async (client, message, args) => {
 
   const duration = moment.duration(client.uptime).format('D [gün], H [saat], m [dakika], s [saniye]');
       
@@ -19,14 +18,14 @@ let i = client.shard.id
     let shardembed = new Discord.MessageEmbed()
     .setTitle('Shard bilgi/İstatistik')
     .setFooter('Bu Sunucunun Shardı İdsi: ' + client.shard.id + '')
-    .setColor(ayarlar.codetoken)
+    .setColor("RANDOM")
     
     for(i=0;i<client.shard.count;i++) {
         shardembed.addField(`🔹**Shard ${i}**`, `▫️ **Ping:** ${Math.round(shardinfo.ping[i])}ms\n▫️ **Sunucu:** ${shardinfo.server_count[i]}\n▫️ **Kullanıcı:** ${shardinfo.user_count[i]}\n▫️ **Uptime:** ${moment.duration(shardinfo.uptime[i]).format(`D [Gün] , H [Saat], m [Dakika], s [Saniye]`)} `, true)
     }
     message.channel.send(shardembed)
 }
-module.exports.config = {
-  name: "shard",
+exports.config = { 
+  name: 'shard',
   aliases: []
 };

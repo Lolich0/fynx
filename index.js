@@ -6,8 +6,8 @@ const app = express();
 const moment = require("moment");
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
-require('./util/eventLoader')(client);
 const db = require('quick.db');
+
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
 
@@ -64,27 +64,3 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-client.on("message", async message => {
-
-    if(message.author.bot) return;
-    if(message.channel.type === 'dm') return;
-    
-    let prefix = await db.get(`prefix_${message.guild.id}`)
-    if(prefix === null) prefix = default_prefix;
-
-    if(message.content.startsWith(prefix)) {
-        const args = message.content.slice(prefix.length).trim().split(/ +/);
-
-        const command = args.shift().toLowerCase();
-
-        if(!client.commands.has(command)) return;
-
-
-        try {
-            client.commands.get(command).run(client, message, args);
-
-        } catch (error){
-            console.error(error);
-        }
-    }
-})

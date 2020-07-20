@@ -6,6 +6,7 @@ const app = express();
 const moment = require("moment");
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
+require('./util/eventLoader')(client);
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
 

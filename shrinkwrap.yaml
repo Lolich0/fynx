@@ -1,5 +1,6 @@
 dependencies:
   '@discordjs/opus': 0.3.2
+  bwapi: github.com/valpha1881/bwapi/52ffe4f52b9248a39f67edd9eb0cffc5dffebba5
   chalk: 4.1.0
   common-tags: 1.8.0
   discord-akairo: 8.0.0
@@ -2066,11 +2067,21 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-/tOT9Pka6nX+LuvzNLBU8AbVHe8XELn3aZ69mvCxzvwO/ty9k8cRvF6jXqti7l5M+0hf+UPpP9jYPSAFAuoBUA==
+  github.com/valpha1881/bwapi/52ffe4f52b9248a39f67edd9eb0cffc5dffebba5:
+    dev: false
+    name: bwapi
+    peerDependencies:
+      request: ^2.88.0
+      request-promise-native: ^1.0.5
+    resolution:
+      tarball: 'https://codeload.github.com/valpha1881/bwapi/tar.gz/52ffe4f52b9248a39f67edd9eb0cffc5dffebba5'
+    version: 3.0.5
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@discordjs/opus': ^0.3.2
+  bwapi: 'github:valpha1881/bwapi'
   chalk: ^4.1.0
   common-tags: ^1.8.0
   discord-akairo: ^8.0.0

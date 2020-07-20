@@ -13,12 +13,16 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 
 client.player = player;
 
-client.on("ready" , () => {
+client.on("ready", () => {
     console.log("Harmony bot şu anda aktif!"); 
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 
-
+const clientt = new Discord.Client({
+  shardId: process.argv[1],
+  shardCount: process.argv[2],
+  fetchAllMembers: true
+});
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

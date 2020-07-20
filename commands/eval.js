@@ -13,7 +13,7 @@ const db = require('quick.db');
 const Jimp = require('jimp')
  
 exports.run = (client, message, args) => {
-   if(message.author.id !== "327064201245753344") return message.channel.send("<a:yanlis:734892943332212764>  | Bu komut sahibimin komutudur. Sahibim hakkında bilgi alabilmek için !sahibim yazabilirsiniz.");
+   if(message.author.id !== "327064201245753344") return message.channel.send(":no_entry: Vay Çakal Bu Sahibimin Komutu");
     try {
       var code = args.join(" ");
       var evaled = eval(code);

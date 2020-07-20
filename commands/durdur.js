@@ -11,7 +11,7 @@ module.exports.run = async (client, message) => {
 
     client.player.stop(message.guild.id);
 
-    message.channel.send({embed: {color: embedSuccess, description: `Müzik durduruldu. Harmony ses kanalından ayrılıyor!!` }})
+    message.channel.send({embed: {color: embedSuccess, description: `Müzik müzikler durduruldu. Harmony ses kanalından ayrılıyor!!` }})
 
 };
 

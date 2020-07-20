@@ -5,16 +5,17 @@ module.exports.run = async (client, message, args) => {
     let embed = new MessageEmbed()
     .setTitle(`Harmony - Yardım`)
     .addField(prefix + 'yardım', `Bütün komutları ve açıklamaları gösterir.`, true)
-    .addField(prefix + 'oynat', `Yeniden oynatmayı açıp kapatmanızı sağlar.`, true)
-    .addField(prefix + 'atla', `Çalan müziği durdurur.`, true)
-    .addField(prefix + 'durdur', `Youtube'den şarkı açmanızı sağlar.`, true)
-    .addField(prefix + 'duraklat', `Youtube'den oynatma listesi açmanızı sağlar.`, true)
-    .addField(prefix + 'devam', `Müzik kuyruğunu gösterir.`, true)
-    .addField(prefix + 'kuyruk', `Müzik kuyruğundan şarkı kaldırmanıza yarar.`, true)
-    .addField(prefix + 'karıştır', `Durdurulan müziği oynatmaya devam eder.`, true)
-    .addField(prefix + 'çalan', `Çalan şarkıyı geçer.`, true)
-    .addField(prefix + 'kuy', `Müziği durdurur.`, true)
-    .addField('Links!', `\n-[İnvite Link](https://discordapp.com/oauth2/authorize?client_id=661927248483450920&scope=bot&permissions=8)\n-[Supporter Server](https://discord.gg/CvzYypW)`)//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ//EMİRHANSARAÇ
+    .addField(prefix + 'oynat <Şarkı İsmi>', `.`, true)
+    .addField(prefix + 'durdur', `Harmony müzik oynatmayı durdurur ve ses kanalından ayrılır.`, true)    
+    .addField(prefix + 'atla', `Oynatılan olan müziği atlar. Kuyrukta müzik var ise müzikler sırayla oynatılır.`, true)
+    .addField(prefix + 'duraklat', `Oynatılan olan müziği duraklatır.`, true)
+    .addField(prefix + 'devam', `Duraklatılan müziği devam ettirir.`, true)
+    .addField(prefix + 'karıştır', `Müzik kuyruğundaki müzikleri karıştırır.`, true)
+    .addField(prefix + 'döngü', `Müzik kuyruğundaki müzikleri döngü içerisine alır.`, true)    
+    .addField(prefix + 'çalan', `Oynatılan olan müziği gösterir.`, true)
+    .addField(prefix + 'kuyruk', `Müzik kuyruğunu gösterir.`, true)
+    .addField(prefix + 'kuyruğu-temizle', `Müzik kuyruğunu temizler.`, true)
+    .addField('Harmony Bot', `\n-[Botu Davet Et!](https://discordapp.com/oauth2/authorize?client_id=511593657711722523&scope=bot&permissions=8)\n-[Destek Sunucusu](https://discord.com/app)`)
     .setColor("#F8AA2A")
     .setTimestamp();
     return message.channel.send(embed);
@@ -22,5 +23,5 @@ module.exports.run = async (client, message, args) => {
 
 module.exports.config = {
     name: "yardım",
-    aliases: []
+    aliases: ["y"]
 };

@@ -7,7 +7,7 @@ exports.run = async (client, message, args) => {
   const kufurr = new Discord.MessageEmbed()
 .setColor(0x36393E)
 .setAuthor("Harmony Music")
-.setDescription(`Lyrics bulabilmek için lütfen Türkçe harf kullanmayınız.`);
+.setDescription(`<a:yanlis:734892943332212764>  | Lyrics bulabilmek için lütfen Türkçe harf kullanmayınız.`);
   
   const kufur = ["ş","ç","ö","ü","ğ","ı","Ş","Ç","Ö","Ü","Ğ","İ"]
   if (kufur.some(word => message.content.includes(word))) return message.channel.send(kufurr)   
@@ -22,7 +22,7 @@ const lyric = require('../ek/lyrics')
     const embed = new Discord.MessageEmbed()
     .setColor(0x36393E)
     .setTitle('Bulunamadı.')
-    .setDescription(`**${args.song}** adında lyrics bulunamadı. Doğru şarkıyı aradığına eminsen arama terimine şarkı sahibini ekleyip ve yeniden deneyiniz.`)
+    .setDescription(`<a:yanlis:734892943332212764>  | **${args.song}** adında lyrics bulunamadı. Doğru şarkıyı aradığına eminsen arama terimine şarkı sahibini ekleyip ve yeniden deneyiniz.`)
     return await message.channel.send(embed);
   }
 const bmended = new Discord.MessageEmbed()

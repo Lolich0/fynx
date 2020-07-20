@@ -15,6 +15,7 @@ client.player = player;
 
 client.on("ready", () => {
   console.log("Harmony bot şu anda aktif!"); 
+  client.channels.cache.get('734687172241784863').join()
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 

@@ -8,6 +8,11 @@ const settings = require("./config/bot.json"); // The bot connects using the con
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
 const Eris = require('eris');
+const { default_prefix } = require('./config/bot.json');
+const { join } = require('path');
+const { readdirSync } = require('fs');
+
+
 
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
@@ -43,7 +48,6 @@ client.on("message", async message => {
     client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
   if (commandfile) commandfile.run(client, message, args);
 });
-
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();

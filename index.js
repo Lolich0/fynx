@@ -30,7 +30,22 @@ setInterval(() => {
 }, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
-client.on("messageCreate", (message) => {
+
+client.on("message", async message => {
+  const prefix = settings.prefix;
+  const messageArray = message.content.split(" ");
+  const cmd = messageArray[0].toLowerCase();
+  const args = messageArray.slice(1);
+
+  if (!message.content.startsWith(prefix)) return;
+  const commandfile =
+    client.commands.get(cmd.slice(prefix.length)) ||
+    client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
+  if (commandfile) commandfile.run(client, message, args);
+});
+
+
+client.on("message", async message => {
   let prefix;
   if (!message.guildID) prefix = "!";
   if (message.guildID) prefix = db.fetch(`prefix_${message.guildID}`) || "!";

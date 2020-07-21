@@ -12,7 +12,7 @@ const embed = new Discord.MessageEmbed()
 .setFooter(`Harmony Music`)
 client.channels.cache.get('735225660188131358').send(embed)
   
-message.channel.send("Tavsiyeniz gönderildi.").then(message => message.delete(6000));
+message.channel.send("Tavsiyeniz bildirildi.").then(message => message.delete(6000));
 message.delete(10)
 };
 exports.config = {

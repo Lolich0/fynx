@@ -8,6 +8,7 @@ const settings = require("./config/bot.json"); // The bot connects using the con
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
 
+
 const player = new Player(client, settings.youtube_api); // To easily access the player
 
 client.player = player;
@@ -28,7 +29,6 @@ setInterval(() => {
 }, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
-
 client.on("message", async message => {
   const prefix = settings.prefix;
   const messageArray = message.content.split(" ");
@@ -83,14 +83,3 @@ dm.send(botdm)
 if(msg.channel.bot) return;
 });
 
-client.on('voiceStateUpdate', async (___, newState) => {
-
-  if (
-    newState.member.user.bot &&
-    newState.channelID &&
-    newState.member.user.id == client.user.id &&
-    !newState.selfDeaf
-  ) {
-    newState.setSelfDeaf(true);
-  }
-});

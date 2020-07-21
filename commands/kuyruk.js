@@ -12,7 +12,7 @@ module.exports.run = async (client, message) => {
     if(!queue) return message.channel.send({embed: {color: embedFail, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 
     let q = queue.songs.map((song, i) => {
-        return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `\n ${i+1}`}- \`${song.name} \n Kanal ${song.author}\``
+        return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `${i+1}`} \n**Müzik:** \`${song.name}\` \n**Kanal:** \`${song.author}\`\n**Süre:** \`${song.duration}\``
     }).join('\n');  
        message.channel.send({embed: {color: embedSuccess, description: `${q}`, thumbnail: `${q.thumbnail}` }})
 }

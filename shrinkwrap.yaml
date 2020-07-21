@@ -8,6 +8,7 @@ dependencies:
   discord-player: 1.4.1
   discord.js: 12.1.1
   discord.js-commando: 0.10.0
+  eris: 0.12.0
   express: 4.17.1
   ffmpeg-static: 4.2.1
   fs: 0.0.2
@@ -884,6 +885,17 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-6u0VYSCo/OW6IoD5WCLLy9JUGARbamfSavcNXry/eu8aHVFei6CD3Sw+VGX5alea1i9pgPHW0mbu6Xj0uBh7gA==
+  /eris/0.12.0:
+    dependencies:
+      ws: 7.3.1
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    optionalDependencies:
+      opusscript: 0.0.7
+      tweetnacl: 1.0.3
+    resolution:
+      integrity: sha512-LIw+uEOfHFCdE9BXL3wqxwml+74TJ7eMiMcyeW/jsmiWndDzybA/WlakiXAAnyg9a5OULOkHlKLOFsl+EgoZag==
   /escape-html/1.0.3:
     dev: false
     resolution:
@@ -1512,6 +1524,11 @@ packages:
     dev: false
     resolution:
       integrity: sha1-WDsap3WWHUsROsF9nFC6753Xa9E=
+  /opusscript/0.0.7:
+    dev: false
+    optional: true
+    resolution:
+      integrity: sha512-DcBadTdYTUuH9zQtepsLjQn4Ll6rs3dmeFvN+SD0ThPnxRBRm/WC1zXWPg+wgAJimB784gdZvUMA57gDP7FdVg==
   /os-homedir/1.0.2:
     dev: false
     engines:
@@ -2029,6 +2046,15 @@ packages:
       utf-8-validate: ^5.0.2
     resolution:
       integrity: sha512-iFtXzngZVXPGgpTlP1rBqsUK82p9tKqsWRPg5L56egiljujJT3vGAYnHANvFxBieXrTFavhzhxW52jnaWV+w2w==
+  /ws/7.3.1:
+    dev: false
+    engines:
+      node: '>=8.3.0'
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: ^5.0.2
+    resolution:
+      integrity: sha512-D3RuNkynyHmEJIpD2qrgVkc9DQ23OrN/moAwZX4L8DfvszsJxpjQuUq3LMx6HoYji9fbIOBY18XWBsAux1ZZUA==
   /xhr/2.5.0:
     dependencies:
       global: 4.3.2
@@ -2103,6 +2129,7 @@ specifiers:
   discord-player: ^1.4.1
   discord.js: 12.1.1
   discord.js-commando: ^0.10.0
+  eris: ^0.12.0
   express: ^4.17.1
   ffmpeg-static: ^4.2.1
   fs: ^0.0.2

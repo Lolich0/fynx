@@ -7,6 +7,7 @@ const moment = require("moment");
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
+const Eris = require('eris');
 
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
@@ -29,18 +30,19 @@ setInterval(() => {
 }, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
-client.on("message", async message => {
-  const prefix = settings.prefix;
-  const messageArray = message.content.split(" ");
-  const cmd = messageArray[0].toLowerCase();
-  const args = messageArray.slice(1);
+client.on("messageCreate", (message) => {
+  let prefix;
+  if (!message.guildID) prefix = "!";
+  if (message.guildID) prefix = db.fetch(`prefix_${message.guildID}`) || "!";
+  if(!message.content.startsWith(prefix)) return;
+  let messageArray = message.content.split(" ");
+  let cmd = messageArray[0]
+  let args = messageArray.slice(1);
 
-  if (!message.content.startsWith(prefix)) return;
-  const commandfile =
-    client.commands.get(cmd.slice(prefix.length)) ||
-    client.commands.get(client.aliases.get(cmd.slice(prefix.length)));
-  if (commandfile) commandfile.run(client, message, args);
-});
+  let commandfile = client.commands.get(cmd.slice(prefix.length));
+  if (!commandfile) commandfile = client.aliases.get(cmd.slice(prefix.length))
+  if(commandfile) commandfile.run(client, message, args);
+})
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();

@@ -7,13 +7,6 @@ const moment = require("moment");
 const settings = require("./config/bot.json"); // The bot connects using the configuration file
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
-const Eris = require('eris');
-const { default_prefix } = require('./config/bot.json');
-const { join } = require('path');
-const { readdirSync } = require('fs');
-
-
-
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
 

@@ -18,6 +18,12 @@ client.on("ready", () => {
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 
+client.on("ready", () => {
+      setInterval(() => {
+        process.exit() // sets bot's activities to one of the phrases in the arraylist.
+    }, 1800000); // Runs this every 10 seconds.
+});
+
 const http = require("http");
  app.get("/", (request, response) => {
   console.log(Date.now() + " BOT Aktif.");

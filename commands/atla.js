@@ -12,9 +12,13 @@ module.exports.run = async (client, message) => {
     const song = await client.player.skip(message.guild.id);
     message.channel.send({embed: {color: embedSuccess, description: `<a:tik:734892939737694239>  | Müzik Atlandı:\n\`${song.name}\`` }})
     const ssong = await client.player.nowPlaying(message.guild.id);
-
+  
+      const mesaj = message.first();
+    mesaj.edit(yenimesaj);
+  
     await message.channel.send({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }}, 3000)
 
+  
  };
 
 

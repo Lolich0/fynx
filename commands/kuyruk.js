@@ -17,8 +17,7 @@ module.exports.run = async (client, message) => {
         return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `${i+1}`} \n**Müzik:** \`${song.name}\` \n**Kanal:** \`${song.author}\`\n**Süre:** \`${song.duration}\``
     }).join('\n');  
        message.channel.send({embed: {color: embedSuccess, description: `${q}`, thumbnail: `${thm}` }})
-};
-
+}
 
   
 module.exports.config = {

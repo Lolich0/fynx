@@ -10,13 +10,9 @@ module.exports.run = async (client, message) => {
     if(!client.player.isPlaying(message.guild.id)) return message.channel.send({embed: {color: embedFail, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 
     const song = await client.player.skip(message.guild.id);
-    message.channel.send({embed: {color: embedSuccess, description: `<a:tik:734892939737694239>  | Müzik Atlandı:\n\`${song.name}\`` }})
-    const ssong = await client.player.nowPlaying(message.guild.id);
-  
-      const mesaj = message.first();
-    mesaj.edit(yenimesaj);
-  
-    await message.channel.send({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }}, 3000)
+    message.channel.send({embed: {color: embedSuccess, description: `<a:tik:734892939737694239>  | Müzik Atlandı:\n\`${song.name}\`` }}).then((sentMessage) =>  sentMessage.edit({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }}))
+    
+    const ssong = await client.player.nowPlaying(message.guild.id);  
 
   
  };

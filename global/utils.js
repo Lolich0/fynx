@@ -17,7 +17,7 @@ module.exports = {
     },
 
     timed_msg: (string, time) => {
-        return msg.channel.send(string).then(msg => msg.delete(time));
+        return msg.channel.cache.send(string).then(msg => msg.delete(time));
     },
 
     no_perm: (error) => {

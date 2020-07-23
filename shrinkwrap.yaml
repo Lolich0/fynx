@@ -5,9 +5,8 @@ dependencies:
   discord-akairo: 8.0.0
   discord-anti-spam: 2.4.1
   discord-giveaways: 4.0.2
-  discord-player: 2.3.0
+  discord-player: 1.4.1
   discord.js: 12.1.1
-  discord.js-commando: 0.10.0
   express: 4.17.1
   ffmpeg-static: 4.2.1
   fs: 0.0.2
@@ -18,7 +17,6 @@ dependencies:
   quick.db: 7.1.1
   ytdl-core: 2.1.2
   ytdl-core-discord: 1.2.0
-  ytsr: 0.1.18
 packages:
   /@babel/runtime/7.10.5:
     dependencies:
@@ -738,12 +736,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
-  /cross-fetch/3.0.5:
-    dependencies:
-      node-fetch: 2.6.0
-    dev: false
-    resolution:
-      integrity: sha512-FFLcLtraisj5eteosnX1gf01qYDCOc4fDy0+euOt8Kn9YBY2NtXL/pCoYPavw24NIQkQqm5ZOLsGD5Zzj0gyew==
   /debug/2.6.9:
     dependencies:
       ms: 2.0.0
@@ -821,37 +813,15 @@ packages:
     dev: false
     resolution:
       integrity: sha512-P14otS454F6TrkgbpeuQBa8GGpfw3wDLorf8G5ZkE1Q1KBVWRKVfarlzcDMMXeyonBS88AtCs9x/NnY8/gq0QA==
-  /discord-player/2.3.0:
+  /discord-player/1.4.1:
     dependencies:
-      discord-ytdl-core: 4.0.5
+      ffmpeg-static: 4.2.1
       merge-options: 2.0.0
-      node-fetch: 2.6.0
-      spotify-url-info: 1.3.1
-      ytpl: 0.2.0
-      ytsr: 0.1.18
+      simple-youtube-api: 5.2.1
+      ytdl-core: 2.1.2
     dev: false
     resolution:
-      integrity: sha512-ZVXvqV7SRk2PlZsUXQWN3IjaB0BnIIBtc3tvCWg2nwJ1ezq3/pYYZF37hARw+8f3ajumFO13UvQWBWqfrqiVMg==
-  /discord-ytdl-core/4.0.5:
-    dependencies:
-      prism-media: 1.2.2
-      ytdl-core: 3.1.2
-    dev: false
-    resolution:
-      integrity: sha512-+hUupz1GDhzGXfajKrUA9glf09fNugriQA9C36t4OB60ZHHivpQbYlAI5JjWstpFwcfwnq+cBboq6eivw6ib7A==
-  /discord.js-commando/0.10.0:
-    dependencies:
-      common-tags: 1.8.0
-      escape-string-regexp: 1.0.5
-      require-all: 2.2.0
-    dev: false
-    engines:
-      node: '>=7.6.0'
-    peerDependencies:
-      discord.js: ^11.2.0
-      sqlite: ^2.0.0
-    resolution:
-      integrity: sha1-v6mL8zEIcDdvPHoNe3Nqaj5dCg8=
+      integrity: sha512-KvB/MwcVpxoDOM4pTz8kG5jbt/bcwP1nZV7b2f2pKx964o35xtfy+M+CPheRWxiQ79aP/b2v3dj0nWykrB7dqQ==
   /discord.js/12.1.1:
     dependencies:
       '@discordjs/collection': 0.1.5
@@ -904,12 +874,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-Aljq5NPQwJdN4cFpGI7wBR0dGYg=
-  /escape-string-regexp/1.0.5:
-    dev: false
-    engines:
-      node: '>=0.8.0'
-    resolution:
-      integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
   /etag/1.8.1:
     dev: false
     engines:
@@ -1109,10 +1073,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-4Ob+aijPUROIVeCG0Wkedx3iqLk=
-  /himalaya/1.1.0:
-    dev: false
-    resolution:
-      integrity: sha512-LLase1dHCRMel68/HZTFft0N0wti0epHr3nNY7ynpLbyZpmrKMQ8YIpiOV77TM97cNpC8Wb2n6f66IRggwdWPw==
   /html-entities/1.3.1:
     dev: false
     resolution:
@@ -1241,6 +1201,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-u5NdSFgsuhaMBoNJV6VKPgcSTxE=
+  /iso8601-duration/1.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-ErTBd++b17E8nmWII1K1uZtBgD1E8RjyvwmxlCjPHNqHMD7gmcMHOw0E8Ro/6+QT4PhHRSnnMo7bxa1vFPkwhg==
   /jimp/0.14.0:
     dependencies:
       '@babel/runtime': 7.10.5
@@ -1281,15 +1245,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-QZCzhcfUliZfsOboi68QkNcMejPKTEhxE+s1TApvHubDeR8ythm4ViWuYFqgUwZeoHe8q0nsPxOvA3lQvdSzyg==
-  /m3u8stream/0.7.1:
-    dependencies:
-      miniget: 1.7.2
-      sax: 1.2.4
-    dev: false
-    engines:
-      node: '>=10'
-    resolution:
-      integrity: sha512-z6ldnAdhbuWOL6LmMkwptSZGzj+qbRytMKLTbNicwF/bJMjf9U9lqD57RNQUFecvWadEkzy6PDjcNJFFgi19uQ==
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -1353,18 +1308,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-yrgaDSMRzrfYTkudB4Y6xK8pCb7oAH2bvfv6iPY2m6CedZfs9yK4b/ofh0Vzv08hCYXH/HHkoS8an6fkWtOAQA==
-  /miniget/1.7.2:
-    dev: false
-    engines:
-      node: '>=10'
-    resolution:
-      integrity: sha512-USPNNK2bnHLOplX8BZVMehUkyQizS/DFpBdoH0TS+fM+hQoLNg9tWg4MeY9wE8gfY0pbzmx5UBEODujt3Lz8AA==
-  /miniget/2.0.1:
-    dev: false
-    engines:
-      node: '>=10'
-    resolution:
-      integrity: sha512-MX+QfVIPAutz6c+T7WKuFKtjcw0nOyRRh1ubhTDD+z/e/pKcSAsfAV63aQKUgb1MFRT1GyfJeW53N5fHkX0wIA==
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
@@ -1758,10 +1701,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ZS5w8CpKFinUzOwW3c83oPeVXoNsrLsaCoLtJvAClH135j/R77RuymhiSErhm2lKcwSCIpmvIWSbDkIfAqKQlA==
-  /require-all/2.2.0:
-    dev: false
-    resolution:
-      integrity: sha1-tEIMIzrAKC0P9Jsnf7iAqLXeCJQ=
   /rimraf/3.0.2:
     dependencies:
       glob: 7.1.6
@@ -1856,22 +1795,13 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
-  /spotify-uri/2.0.0:
-    dev: false
-    engines:
-      node: '>= 6'
-    resolution:
-      integrity: sha512-GmEDCx74boSaJFgyUGEKVnVTinCNF5f8RMIUsM8MKJSSaeQ/qonipY42NFct4pFbUT3MS5A19z/Dduy1dHdvaQ==
-  /spotify-url-info/1.3.1:
+  /simple-youtube-api/5.2.1:
     dependencies:
-      cross-fetch: 3.0.5
-      himalaya: 1.1.0
-      spotify-uri: 2.0.0
+      iso8601-duration: 1.2.0
+      node-fetch: 2.6.0
     dev: false
-    engines:
-      node: '>=8.0.0'
     resolution:
-      integrity: sha512-i77bU6lOWTcVrvyH+axnIqnfKcakkn4+lGUCpyL5hZh8dOSWnNJZtJPMNcEFAT/yiyx3AGF2twLFpl0caS/wiw==
+      integrity: sha512-vmndP9Bkh35tifn2OwY+th2imSsfYtmDqczgdOW5yEARFzvSoR8VSQFsivJnctfV5QHQUL6VrOpNdbmDRLh9Bg==
   /statuses/1.5.0:
     dev: false
     engines:
@@ -2136,33 +2066,6 @@ packages:
       node: '>=10'
     resolution:
       integrity: sha512-/tOT9Pka6nX+LuvzNLBU8AbVHe8XELn3aZ69mvCxzvwO/ty9k8cRvF6jXqti7l5M+0hf+UPpP9jYPSAFAuoBUA==
-  /ytdl-core/3.1.2:
-    dependencies:
-      html-entities: 1.3.1
-      m3u8stream: 0.7.1
-      miniget: 2.0.1
-      sax: 1.2.4
-    dev: false
-    engines:
-      node: '>=10'
-    resolution:
-      integrity: sha512-H2ja9W9j89TTf+LMQxo1VrdpUNCcjjHnwY6M4NmvgUaQLwNZnIoBwbch4iaT8q75trUK83PzmbihkUBd5Poyfg==
-  /ytpl/0.2.0:
-    dependencies:
-      html-entities: 1.3.1
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-PQMBd89PrFdlxEKJo2lTG2PCrBbOE5TUjkzoTGZuxBLlcX5odQaAtF7RpcAlm8mufxP+BtQefJMxlKgiHBPKCg==
-  /ytsr/0.1.18:
-    dependencies:
-      html-entities: 1.3.1
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-/m2Id+SmcrD2UbszyhuzzUMIp/aUBHMDgHzKI3Zs+E9SGATrS6j//1K+5sf5lzWWx+361Z5IJf8+W2BAk+mQ5g==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -2173,9 +2076,8 @@ specifiers:
   discord-akairo: ^8.0.0
   discord-anti-spam: ^2.4.1
   discord-giveaways: ^4.0.2
-  discord-player: ^2.3.0
+  discord-player: ^1.4.1
   discord.js: 12.1.1
-  discord.js-commando: ^0.10.0
   express: ^4.17.1
   ffmpeg-static: ^4.2.1
   fs: ^0.0.2
@@ -2186,4 +2088,3 @@ specifiers:
   quick.db: ^7.1.1
   ytdl-core: ^2.1.2
   ytdl-core-discord: ^1.2.0
-  ytsr: ^0.1.18

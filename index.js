@@ -18,6 +18,15 @@ client.on("ready", () => {
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 
+const http = require("http");
+ app.get("/", (request, response) => {
+  console.log(Date.now() + " BOT Aktif.");
+  response.sendStatus(200);
+});
+app.listen(process.env.PORT);
+setInterval(() => {
+  http.get(`http://linen-believed-fiber.glitch.me`);
+}, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {
@@ -72,17 +81,5 @@ dm.send(botdm)
 
 }
 if(msg.channel.bot) return;
-});
-
-client.on('voiceStateUpdate', async (___, newState) => {
-
-  if (
-    newState.member.user.bot &&
-    newState.channelID &&
-    newState.member.user.id == client.user.id &&
-    !newState.selfDeaf
-  ) {
-    newState.setSelfDeaf(true);
-  }
 });
 

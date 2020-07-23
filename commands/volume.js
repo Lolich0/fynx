@@ -18,6 +18,6 @@ module.exports.run = async (client, message, args) => {
 }
 
 module.exports.config = {
-  name: "set-volume",
-  aliases: ['sv']
+  name: "ses",
+  aliases: ['ses-seviyesi']
 };

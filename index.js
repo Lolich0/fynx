@@ -18,13 +18,6 @@ client.on("ready", () => {
   client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 });
 
-client.on("message", async message => {
-if (message.content.toLowerCase() === "durumyenile31ye") {
-client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
-}
-});
-
-
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

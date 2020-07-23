@@ -19,10 +19,10 @@ module.exports.run = async (client, message, args) => {
         // Else, play the song
         const song = await client.player.play(message.member.voice.channel, args.join(" "));
         message.channel.send({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }})
-    song.queue.on('end', () => {
+       song.queue.on('end', () => {
     message.channel.send({embed: {color: embedFail, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Harmony ses kanalından ayrılıyor!` }})
     });
-    }
+ }
 };
 
   

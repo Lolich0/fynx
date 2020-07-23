@@ -31,3 +31,4 @@ module.exports.config = {
     aliases: ["çal"],
     permlevel: 0
 };
+

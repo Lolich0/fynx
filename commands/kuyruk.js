@@ -10,12 +10,13 @@ module.exports.run = async (client, message) => {
     const queue = client.player.getQueue(message.guild.id);
 
 
+
     if(!queue) return message.channel.send({embed: {color: embedFail, description: `<a:yanlis:734892943332212764>  | Şu anda hiçbir müzik çalmamaktadır!` }})
 
     let q = queue.songs.map((song, i) => {
         return `${i === 0 ? '<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik' : `\nKuyruk No: ${i}`} \n**Müzik:** \`${song.name}\` \n**Kanal:** \`${song.author}\`\n**Tarafından İstendi:** \`${song.requestedBy}\``
     }).join('\n');  
-       message.channel.send({embed: {color: embedSuccess, description: `${q}`, thumbnail: `https://cdn.discordapp.com/attachments/703582257570644029/734646429833756732/HarmonyMusic.png`}})
+       message.channel.send({embed: {color: embedSuccess, description: `${q}`}})
 };
 
   

@@ -30,7 +30,7 @@ const http = require("http");
 app.listen(process.env.PORT);
 setInterval(() => {
   http.get(`http://lavender-fifth-gander.glitch.me`);
-}, 1000 * 60 * 3);
+}, 1000 * 60 );
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {

@@ -29,7 +29,7 @@ const http = require("http");
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://linen-believed-fiber.glitch.me`);
+  http.get(`http://lavender-fifth-gander.glitch.me`);
 }, 1000 * 60 * 3);
 
 client.login(process.env.TOKEN);

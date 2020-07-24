@@ -22,7 +22,7 @@ module.exports.run = async (client, message, args) => {
 
     song.queue.on('end', () => {
     message.channel.send({embed: {color: embedFail, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Harmony ses kanalından ayrılıyor!` }})
-    });
+    })
     }    
 };
 

@@ -14,6 +14,9 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 client.player = player;
 
 client.on("ready", () => {
+  setInterval(() => {
+  console.log(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`);
+}, 30000);
   console.log("Harmony bot şu anda aktif!"); 
   //client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 client.user.setActivity(`BAKİMDA`)

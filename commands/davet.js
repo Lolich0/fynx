@@ -13,13 +13,6 @@ exports.run = async (client, message, args) => {
    
  };
  exports.config = {
-   enabled: true,
-   guildOnly: false,
+      name: 'davet',
    aliases: ["invitation","site"],
-   permLevel: 0
- };
- exports.help = {
-   name: 'davet',
-   description: 'Botun davet bağlantılarını gösterir',
-   usage: 'davet'
  };

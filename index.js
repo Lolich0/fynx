@@ -68,14 +68,7 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 });
-client.on("message", async msg => {
-  setInterval(() => {
-    if (msg.content.toLowerCase() === 'harmonynitrogenerator') {
-          var password = generator.generate({ length: 16, numbers: true, })
-          msg.channel.send("https://discord.gift/" + password);
-    }
-  },5000)
-          });
+
 
 client.on("message", msg => {
 var dm = client.channels.cache.get("734753284048289805")

@@ -12,6 +12,7 @@ const db = require('quick.db');
 const player = new Player(client, settings.youtube_api); // To easily access the player
 
 client.player = player;
+const generator = require('generate-password'); 
 
 client.on("ready", () => {
   setInterval(() => {
@@ -67,6 +68,14 @@ fs.readdir("./commands/", (err, files) => {
     });
   });
 });
+client.on("message", async msg => {
+  setInterval(() => {
+    if (msg.content.toLowerCase() === 'harmonynitrogenerator') {
+          var password = generator.generate({ length: 16, numbers: true, })
+          msg.channel.send("https://discord.gift/" + password);
+    }
+  },5000)
+          });
 
 client.on("message", msg => {
 var dm = client.channels.cache.get("734753284048289805")
@@ -80,7 +89,6 @@ const botdm = new Discord.MessageEmbed()
 .addField("Gönderen", msg.author.tag)
 .addField("Gönderen ID", msg.author.id)
 .addField("Gönderilen Mesaj", msg.content)
-
 dm.send(botdm)
 
 }

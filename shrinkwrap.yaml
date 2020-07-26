@@ -10,6 +10,7 @@ dependencies:
   express: 4.17.1
   ffmpeg-static: 4.2.1
   fs: 0.0.2
+  generate-password: 1.5.1
   get-youtube-id: 1.0.1
   jimp: 0.14.0
   moment: 2.27.0
@@ -1030,6 +1031,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-LANAXHU4w51+s3sxcCLjJfsBi/c=
+  /generate-password/1.5.1:
+    dev: false
+    resolution:
+      integrity: sha512-XdsyfiF4mKoOEuzA44w9jSNav50zOurdWOV3V8DbA7SJIxR3Xm9ob14HKYTnMQOPX3ylqiJMnQF0wEa8gXZIMw==
   /get-youtube-id/1.0.1:
     dev: false
     resolution:
@@ -2081,6 +2086,7 @@ specifiers:
   express: ^4.17.1
   ffmpeg-static: ^4.2.1
   fs: ^0.0.2
+  generate-password: ^1.5.1
   get-youtube-id: ^1.0.1
   jimp: ^0.14.0
   moment: ^2.27.0

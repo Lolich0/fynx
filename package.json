@@ -13,6 +13,7 @@
   "dependencies": {
     "@discordjs/opus": "^0.3.2",
     "chalk": "^4.1.0",
+    "generate-password": "^1.5.1",
     "common-tags": "^1.8.0",
     "jimp": "^0.14.0",
     "moment-duration-format": "^2.3.2",

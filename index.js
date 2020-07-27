@@ -9,11 +9,9 @@ const { Player } = require("discord-player"); // Create a new Player (Youtube AP
 const db = require('quick.db');
 
 
-
 const player = new Player(client, settings.youtube_api); // To easily access the player
 
 client.player = player;
-const generator = require('generate-password'); 
 
 client.on("ready", () => {
   setInterval(() => {
@@ -31,8 +29,8 @@ const http = require("http");
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://defiant-kind-peach.glitch.me`);
-}, 180000);
+  http.get(`http://lavender-fifth-gander.glitch.me`);
+}, 1000 * 60 );
 
 client.login(process.env.TOKEN);
 client.on("message", async message => {
@@ -70,7 +68,6 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
-
 client.on("message", msg => {
 var dm = client.channels.cache.get("734753284048289805")
 if(msg.channel.type === "dm") {
@@ -83,6 +80,7 @@ const botdm = new Discord.MessageEmbed()
 .addField("Gönderen", msg.author.tag)
 .addField("Gönderen ID", msg.author.id)
 .addField("Gönderilen Mesaj", msg.content)
+
 dm.send(botdm)
 
 }

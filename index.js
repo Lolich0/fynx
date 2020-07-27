@@ -8,6 +8,21 @@ const settings = require("./config/bot.json"); // The bot connects using the con
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
 
+client.on("guildCreate", guild => {
+
+let defaultChannel = "";
+guild.channels.cache.forEach((channel) => {
+  if(channel.type == "text" && defaultChannel == "") {
+    if(channel.permissionsFor(guild.me).has("SEND_MESSAGES")) {
+      defaultChannel = channel;
+    }
+  }
+})
+//defaultChannel will be the channel object that the bot first finds permissions for
+defaultChannel.send(`**Merhaba, ben <@${client.user.id}>\nBen gelişmiş ve gelişmekte olan bir müzik botuyum.\nBeni kullanmaya hemen başlayabilirsin.\nTek yapman gereken şey \`!yardım\` yazmak.\n#evdekal #masketak #mesafenikoru**`)
+
+
+});
 
 const player = new Player(client, settings.youtube_api); // To easily access the player
 

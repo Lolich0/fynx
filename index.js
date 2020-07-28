@@ -8,7 +8,7 @@ const settings = require("./config/bot.json"); // The bot connects using the con
 const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
 const db = require('quick.db');
 
-const emmmmbed = new Discord.MessageEmbed()
+const emmmmbed = new Discord.MessageEmbed().
 .setThumbnail(`https://cdn.discordapp.com/attachments/703582257570644029/734646429833756732/HarmonyMusic.png`)
 .addField(`Harmony - Teşekkürler`, `Selamlar, ben Mustafa(Harmony Geliştiricisi) öncelikle botumu eklediğiniz ve bana destek olduğunuz için sizlere teşekkürl
 erimi sunarım`)

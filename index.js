@@ -58,7 +58,7 @@ setInterval(() => {
   http.get(`http://lavender-fifth-gander.glitch.me`);
 }, 1000 * 60 );
 
-client.login(process.env.TOKEN);
+client.login(process.env.TOKENS);
 client.on("message", async message => {
   const prefix = settings.prefix;
   const messageArray = message.content.split(" ");

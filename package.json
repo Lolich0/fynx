@@ -1,8 +1,8 @@
 {
-  "name": "ultrabot",
+  "name": "abot",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Ultra - Developers",
+  "author": "Harmony Bot",
   "license": "MIT",
   "engines": {
     "node": "12.x"

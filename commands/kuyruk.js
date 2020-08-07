@@ -16,7 +16,6 @@ module.exports.run = async (client, message) => {
     }).join('\n');  
        message.channel.send({embed: {color: embedSuccess, description: `${q}`, thumbnail: `${q.thumbnail}` }})
 }
-
   
 module.exports.config = {
     name: "kuyruk",

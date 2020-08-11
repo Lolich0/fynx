@@ -40,26 +40,21 @@ defaultChannel.send(emmmmbed)
 //----------------------------------------------------------------\\
 
 const player = new Player(client, fynx.youtube_api);
-
 client.player = player;
-
-client.on("ready", () => {
-client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
-  console.log("Fynx Music bot şu anda aktif!");
-});
 
 //-------------7/24 Komutu ---------------\\
 
 
 const http = require("http");
  app.get("/", (request, response) => {
-  console.log(fynx.pingmesaj);
+  console.log(`${fynx.pingmesaj}`);
   response.sendStatus(200);
 });
 app.listen(fynx.fynxport);
 setInterval(() => {
   http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 1000 * 60 * 30);
+
 //----------------------------------------------\\
 
 client.on("message", async message => {
@@ -113,9 +108,10 @@ client.on('voiceStateUpdate', async (___, newState) => {
 
   client.login(fynx.fynxtoken)
   .then(function() {
-    console.log('[FynxCode] Token doğru bir şekilde çalişiyor.')
+    console.log('[FynxCode] Token doğru. Bot aktif ediliyor.')
+    client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
   }, function(err) {
-    console.log("[Hata] Token hata verdi:\nHata: " + err)
+    console.log("[Hata] Tokeniniz yanlış. Bot başlatılamıyor.")
         setInterval(function() {
        process.exit(0)
         }, 20000);

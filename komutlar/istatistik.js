@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
     .addField("<:discordjs:735102801449058364>  | **Discord.JS sürüm**", "v" + Discord.version, true)
     .addField("<:nodejs:735102802614943826>  | **Node.JS sürüm**", `${process.version}`, true)
     .addField(":microphone:  | **Müzik Oynatılan Sunucu Sayısı**", client.voice.connections.size, true)
-  .addField(`<:Belge:735061681197285476>  | **Sunucu Sayısı**`, client.guilds.cache.size, true)
+  .addField(`<:belge:742884430997225583>  | **Sunucu Sayısı**`, client.guilds.cache.size, true)
 .addField(`:family_man_girl:  | **Kullanıcı Sayısı**`, client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString(), true)
   .addField(`<:sunucu:736507254857269328>  | **Sunucu Lokasyonu**`, `<a:turkiye:734888652827656262>  Turkey, Izmir`, true)
   return message.channel.send(istatistikler);

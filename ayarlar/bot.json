@@ -1,7 +1,7 @@
 {
     "prefix": "+",
     "youtube_api": "AIzaSyB0T72NhTE_3VVO98CWWvzBYAbSIUaS4bk",
-    "token": "NzM1MTg5NzMwODU3MzIwNTE4.Xxcoyw.x5Iu3j4e_5ZZ_FwrpqycKImLwX0",
-    "port": "3000",
+    "fynxtoken": "NzM1MTg5NzMwODU3MzIwNTE4.Xxcoyw.x5Iu3j4e_5ZZ_FwrpqycKImLwX0",
+    "fynxport": "3000",
     "pingmesaj": "[FynxCode v12 Müzik Altyapısı] Bot Pinglendi! ☝"
 }

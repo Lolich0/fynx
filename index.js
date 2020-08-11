@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-const fynx = require("./fynxayarlar/fynx.json"); 
+const fynx = require("./ayarlar/bot.json"); 
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
@@ -56,9 +56,9 @@ const http = require("http");
   console.log(fynx.pingmesaj);
   response.sendStatus(200);
 });
-app.listen(fynx.port);
+app.listen(fynx.fynxport);
 setInterval(() => {
-  http.get(`http://fynx-musicaltyapi-ordekcik.glitch.me/`);
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
 }, 1000 * 60 * 30);
 //----------------------------------------------\\
 
@@ -111,12 +111,11 @@ client.on('voiceStateUpdate', async (___, newState) => {
 });
 //---------------------------------------------------------\\
 
-
-  client.login(fynx.token)
+  client.login(fynx.fynxtoken)
   .then(function() {
-    console.log('[FynxCode v12 Müzik Altyapı] Token doğru bir şekilde çalışıyor.' + client.username)
+    console.log('[FynxCode] Token doğru bir şekilde çalişiyor.')
   }, function(err) {
-    console.log("[FynxCode v12 Müzik Altyapı] Token hata verdi:\nHata: " + err)
+    console.log("[Hata] Token hata verdi:\nHata: " + err)
         setInterval(function() {
        process.exit(0)
         }, 20000);

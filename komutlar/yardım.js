@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const fynx = require("../fynxayarlar/fynx.json");
+const fynx = require("../ayarlar/bot.json");
  
 module.exports.run = (client, message, args) => {
  

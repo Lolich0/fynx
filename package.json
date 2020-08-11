@@ -1,14 +1,14 @@
 {
   "name": "fynxmusic",
   "version": "1.0.0",
-  "main": "fynx.js",
+  "main": "index.js",
   "author": "FynxMusic",
   "license": "MIT",
   "engines": {
     "node": "12.x"
   },
   "scripts": {
-    "start": "node fynx.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "@discordjs/opus": "^0.3.2",

@@ -4,9 +4,12 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-const settings = require("./config/bot.json"); // The bot connects using the configuration file
-const { Player } = require("discord-player"); // Create a new Player (Youtube API key is your Youtube Data v3 key)
+const settings = require("./config/bot.json"); 
+const { Player } = require("discord-player"); 
 const db = require('quick.db');
+
+//-------------Bot Eklenince Mesaj Gönderme Komutu ---------------\\
+
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail(`https://cdn.discordapp.com/app-icons/522870338867167254/c82cd947b45d9d3a0f34ba8aaf0422ee.png`)
@@ -29,12 +32,12 @@ guild.channels.cache.forEach((channel) => {
     }
   }
 })
-//defaultChannel will be the channel object that the bot first finds permissions for
+
 defaultChannel.send(emmmmbed)
 
 });
-
-const player = new Player(client, settings.youtube_api); // To easily access the player
+//----------------------------------------------------------------\\
+const player = new Player(client, settings.youtube_api);
 
 client.player = player;
 
@@ -43,6 +46,9 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
   console.log("Fynx Music bot şu anda aktif!");
 });
 
+//-------------7/24 Komutu ---------------\\
+
+
 const http = require("http");
  app.get("/", (request, response) => {
   console.log("Fynx Music Pinglendi.");
@@ -50,8 +56,9 @@ const http = require("http");
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://fallacious-striped-condition.glitch.me/`);
+  http.get(`http://ProjeAdi.glitch.me/`);
 }, 1000 * 60 );
+//------------------------------------------\\
 
 client.login(process.env.TOKENS);
 client.on("message", async message => {
@@ -89,6 +96,8 @@ fs.readdir("./commands/", (err, files) => {
   });
 });
 
+//-------------Kendini Sağirlaştirma Komutu ---------------\\
+
 client.on('voiceStateUpdate', async (___, newState) => {
 
   if (
@@ -100,3 +109,4 @@ client.on('voiceStateUpdate', async (___, newState) => {
     newState.setSelfDeaf(true);
   }
 });
+//---------------------------------------------------------\\

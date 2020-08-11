@@ -1,8 +1,8 @@
 {
-  "name": "harmonybot",
+  "name": "fynxmusic",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Harmony Bot",
+  "author": "FynxMusic",
   "license": "MIT",
   "engines": {
     "node": "12.x"

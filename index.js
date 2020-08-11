@@ -40,7 +40,7 @@ client.player = player;
 
 client.on("ready", () => {
   setInterval(() => {
-  console.log(`Harmony | ` + client.guilds.cache.size +`,439 Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + `,320 Kullanıcı`);
+  console.log(`Harmony | ` + client.guilds.cache.size +` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`);
 //client.user.setActivity(`Bakim Modu Aktif!!!`)  
 client.user.setActivity(`Harmony | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 }, 30000);

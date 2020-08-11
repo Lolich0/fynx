@@ -9,7 +9,7 @@ exports.run = async (client, message, args) => {
   const istatistikler = new Discord.MessageEmbed()
     .setColor("RANDOM")
     .setTimestamp()//client.guilds.cache.size //client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()
-    .setFooter("Harmony © 2020", client.user.avatarURL())
+    .setFooter("Fynx Music © 2020", client.user.avatarURL())
     .addField("<a:coder:734885134800519288>  | **Botun Sahibi**", "<@327064201245753344>")
     .addField("<:ping:735102803340558336>  | **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
         .replace("{ping1}", new Date().getTime() - message.createdTimestamp)

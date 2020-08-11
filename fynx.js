@@ -51,7 +51,7 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
 
 const http = require("http");
  app.get("/", (request, response) => {
-  console.log("Fynx Music Pinglendi.");
+  console.log(fynx.pingmesaj);
   response.sendStatus(200);
 });
 app.listen(fynx.port);

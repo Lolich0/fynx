@@ -4,11 +4,11 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-const fynx = require("./ayarlar/fynx.json"); 
+const fynx = require("./fynxayarlar/fynx.json"); 
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
-//-------------Bot Eklenince Mesaj Gönderme Komutu ---------------\\
+//-------------Bot Eklenince Bir Kanala Mesaj Gönderme Komutu ---------------\\
 
 
 const emmmmbed = new Discord.MessageEmbed()
@@ -112,7 +112,7 @@ client.on('voiceStateUpdate', async (___, newState) => {
 //---------------------------------------------------------\\
 
 
-  client.login(fynx.fynxtoken)
+  client.login(fynx.token)
   .then(function() {
     console.log('[FynxCode v12 Müzik Altyapı] Token doğru bir şekilde çalışıyor.' + client.username)
   }, function(err) {

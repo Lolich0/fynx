@@ -38,6 +38,7 @@ defaultChannel.send(emmmmbed)
 });
 
 //----------------------------------------------------------------\\
+
 const player = new Player(client, fynx.youtube_api);
 
 client.player = player;
@@ -47,6 +48,19 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
   console.log("Fynx Music bot şu anda aktif!");
 });
 
+//-------------7/24 Komutu ---------------\\
+
+
+const http = require("http");
+ app.get("/", (request, response) => {
+  console.log(fynx.pingmesaji);
+  response.sendStatus(200);
+});
+app.listen(fynx.port);
+setInterval(() => {
+  http.get(`http://ProjeAdi.glitch.me/`);
+}, 1000 * 60 * 30);
+//------------------------------------------\\
 
 client.on("message", async message => {
   const prefix = fynx.prefix;

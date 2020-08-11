@@ -3,5 +3,5 @@
     "youtube_api": "YoutubeApiKey",
     "fynxtoken": "DiscordBotToken",
     "port": "3000",
-    "pingmesaji": "[FynxCode v12 Müzik Altyapısı] Bot Pinglendi! ☝"
+    "pingmesaj": "[FynxCode v12 Müzik Altyapısı] Bot Pinglendi! ☝"
 }

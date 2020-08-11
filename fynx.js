@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-const fynx = require("./ayarlar/bot.json"); 
+const fynx = require("./ayarlar/fynx.json"); 
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
@@ -53,14 +53,14 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
 
 const http = require("http");
  app.get("/", (request, response) => {
-  console.log(fynx.pingmesaji);
+  console.log(fynx.pingmesaj);
   response.sendStatus(200);
 });
 app.listen(fynx.port);
 setInterval(() => {
-  http.get(`http://ProjeAdi.glitch.me/`);
+  http.get(`http://fynx-musicaltyapi-ordekcik.glitch.me/`);
 }, 1000 * 60 * 30);
-//------------------------------------------\\
+//----------------------------------------------\\
 
 client.on("message", async message => {
   const prefix = fynx.prefix;

@@ -10,7 +10,7 @@ exports.run = async (client, message, args) => {
     .setColor("RANDOM")
     .setTimestamp()//client.guilds.cache.size //client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString()
     .setFooter("Fynx Music © 2020", client.user.avatarURL())
-    .addField("<a:coder:734885134800519288>  | **Botun Sahibi**", "<@327064201245753344>")
+    .addField("<a:coder:734885134800519288>  | **Botun Sahibi**", "<@236173144300191754> <@327064201245753344>")
     .addField("<:ping:735102803340558336>  | **Gecikme süreleri**","Mesaj Gecikmesi: {ping1} ms \nBot Gecikmesi: {ping2} ms"
         .replace("{ping1}", new Date().getTime() - message.createdTimestamp)
         .replace("{ping2}", client.ws.ping),true)

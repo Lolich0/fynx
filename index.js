@@ -39,13 +39,8 @@ const player = new Player(client, settings.youtube_api); // To easily access the
 client.player = player;
 
 client.on("ready", () => {
-  setInterval(() => {
-  //console.log(`Fynx Music | ` + client.guilds.cache.size +` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`);
-client.user.setActivity(`Bakimda beyler ellemeyin pls.`)  
 client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
-}, 30000);
   console.log("Fynx Music bot şu anda aktif!");
-//client.user.setActivity(`BAKİMDA`)
 });
 
 const http = require("http");

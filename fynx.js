@@ -13,7 +13,7 @@ const db = require('quick.db');
 
 const emmmmbed = new Discord.MessageEmbed()
 .setThumbnail(`https://cdn.discordapp.com/app-icons/522870338867167254/c82cd947b45d9d3a0f34ba8aaf0422ee.png`)
-.addField(`Fynx Music - Teşekkürler`, `Selamlar, ben Mustafa(Fynx Music Geliştiricisi) öncelikle botumu eklediğiniz ve bana destek olduğunuz için sizlere teşekkürl
+.addField(`Fynx Music - Teşekkürler`, `Selamlar, ben Fynx Music Geliştiricisi öncelikle botumuzu eklediğiniz ve bana destek olduğunuz için sizlere teşekkürl
 erimi sunarım`)
 .addField(`Fynx - Prefix(Ön Ek)`, `Fynx Music botun prefixi(ön eki) = \`+\`(ünlem işareti)'dir.`)
 .addField(`Fynx Music - Nasıl Kullanılır?`, `Fynx Music botun tüm özelliklerinden yararlanabilmek için sadece \`+yardım\` yazmanız gerekmektedir.`)
@@ -36,6 +36,7 @@ guild.channels.cache.forEach((channel) => {
 defaultChannel.send(emmmmbed)
 
 });
+
 //----------------------------------------------------------------\\
 const player = new Player(client, fynx.youtube_api);
 
@@ -46,26 +47,12 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
   console.log("Fynx Music bot şu anda aktif!");
 });
 
-//-------------7/24 Komutu ---------------\\
-
-
-const http = require("http");
- app.get("/", (request, response) => {
-  console.log(fynx.pingmesaj);
-  response.sendStatus(200);
-});
-app.listen(fynx.port);
-setInterval(() => {
-  http.get(`http://ProjeAdi.glitch.me/`);
-}, 1000 * 60 * 30);
-//------------------------------------------\\
 
 client.on("message", async message => {
   const prefix = fynx.prefix;
   const messageArray = message.content.split(" ");
   const cmd = messageArray[0].toLowerCase();
   const args = messageArray.slice(1);
-
   if (!message.content.startsWith(prefix)) return;
   const commandfile =
     client.commands.get(cmd.slice(prefix.length)) ||

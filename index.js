@@ -40,8 +40,8 @@ client.player = player;
 
 client.on("ready", () => {
   setInterval(() => {
-  console.log(`Fynx Music | ` + client.guilds.cache.size +` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`);
-//client.user.setActivity(`Bakim Modu Aktif!!!`)  
+  //console.log(`Fynx Music | ` + client.guilds.cache.size +` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`);
+client.user.setActivity(`Bakimda beyler ellemeyin pls.`)  
 client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | ` + client.guilds.cache.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` Kullanıcı`, { type: 'LISTENING' });
 }, 30000);
   console.log("Fynx Music bot şu anda aktif!");
@@ -50,12 +50,12 @@ client.user.setActivity(`Fynx Music | ` + client.guilds.cache.size + ` Sunucu | 
 
 const http = require("http");
  app.get("/", (request, response) => {
-  console.log(Date.now() + " BOT Aktif.");
+  console.log("Fynx Music Pinglendi.");
   response.sendStatus(200);
 });
 app.listen(process.env.PORT);
 setInterval(() => {
-  http.get(`http://lavender-fifth-gander.glitch.me`);
+  http.get(`http://fallacious-striped-condition.glitch.me/`);
 }, 1000 * 60 );
 
 client.login(process.env.TOKENS);

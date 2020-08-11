@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.send({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }})
 
     song.queue.on('end', () => {
-    message.channel.send({embed: {color: embedFail, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Harmony ses kanalından ayrılıyor!` }})
+    message.channel.send({embed: {color: embedFail, description: `<a:tik:734892939737694239>  | Kuyruktaki tüm müzikler oynatıldı. Fynx Music ses kanalından ayrılıyor!` }})
     })
     }    
 };

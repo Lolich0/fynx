@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const express = require("express");
 const app = express();
 const moment = require("moment");
-const settings = require("./config/bot.json"); 
+const fynx = require("./ayarlar/bot.json"); 
 const { Player } = require("discord-player"); 
 const db = require('quick.db');
 
@@ -37,7 +37,7 @@ defaultChannel.send(emmmmbed)
 
 });
 //----------------------------------------------------------------\\
-const player = new Player(client, settings.youtube_api);
+const player = new Player(client, fynx.youtube_api);
 
 client.player = player;
 
@@ -54,15 +54,14 @@ const http = require("http");
   console.log("Fynx Music Pinglendi.");
   response.sendStatus(200);
 });
-app.listen(process.env.PORT);
+app.listen(fynx.port);
 setInterval(() => {
   http.get(`http://ProjeAdi.glitch.me/`);
-}, 1000 * 60 );
+}, 1000 * 60 * 30);
 //------------------------------------------\\
 
-client.login(process.env.TOKENS);
 client.on("message", async message => {
-  const prefix = settings.prefix;
+  const prefix = fynx.prefix;
   const messageArray = message.content.split(" ");
   const cmd = messageArray[0].toLowerCase();
   const args = messageArray.slice(1);
@@ -77,7 +76,7 @@ client.on("message", async message => {
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
 
-fs.readdir("./commands/", (err, files) => {
+fs.readdir("./komutlar/", (err, files) => {
   const jsfiles = files.filter(f => f.split(".").pop() === "js");
 
   if (jsfiles.length <= 0) {
@@ -87,7 +86,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfiles.forEach(file => {
     console.log(`Yüklenen Komut: ${file}`);
 
-    const command = require(`./commands/${file}`);
+    const command = require(`./komutlar/${file}`);
 
     client.commands.set(command.config.name, command);
     command.config.aliases.forEach(alias => {
@@ -110,3 +109,14 @@ client.on('voiceStateUpdate', async (___, newState) => {
   }
 });
 //---------------------------------------------------------\\
+
+
+  client.login(fynx.fynxtoken)
+  .then(function() {
+    console.log('[FynxCode v12 Müzik Altyapı] Token doğru bir şekilde çalışıyor.' + client.username)
+  }, function(err) {
+    console.log("[FynxCode v12 Müzik Altyapı] Token hata verdi:\nHata: " + err)
+        setInterval(function() {
+       process.exit(0)
+        }, 20000);
+        })

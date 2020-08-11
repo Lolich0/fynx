@@ -1,0 +1,7 @@
+{
+    "prefix": "BotPrefix",
+    "youtube_api": "YoutubeApiKey",
+    "fynxtoken": "DiscordBotToken",
+    "port": "3000"
+         
+}

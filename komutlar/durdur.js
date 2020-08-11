@@ -1,4 +1,3 @@
-const emotes = require ("../config/emojis.json");
 const embedColor = "#36393e";
 const embedSuccess = "#22BF41";
 const embedFail = "#f30707";

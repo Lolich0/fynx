@@ -1,4 +1,3 @@
-const emotes = require ("../config/emojis.json");
 const embedColor = "#36393e";
 const embedSuccess = "#22BF41";
 const embedFail = "#f30707";
@@ -10,13 +9,10 @@ module.exports.run = async (client, message, args) => {
   
     const aSongIsAlreadyPlaying = client.player.isPlaying(message.guild.id);
 
-    // If there's already a song playing 
     if(aSongIsAlreadyPlaying){
-        // Add the song to the queue
         const song = await client.player.addToQueue(message.guild.id, args.join(" "));
         message.channel.send({embed: {color: embedSuccess, description: `<a:tik:734892939737694239>  | \`${song.name}\` adlı müzik kuyruğa eklendi!` }})
     } else {
-        // Else, play the song
         const song = await client.player.play(message.member.voice.channel, args.join(" "));
         message.channel.send({embed: {color: embedSuccess, description: `<a:calan:735111831550427166>  | Şu Anda Çalınan Müzik:\n\`${song.name}\`` }})
 

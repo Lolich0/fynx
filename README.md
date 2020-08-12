@@ -32,7 +32,7 @@
 
 botunuz otomatik olarak aktif olacaktır.
 
-**Bot nasıl yapılır?**
+**🤖 Bot nasıl yapılır?**
 
 **1-** [DiscordDeveloper](https://discord.com/developers) ilk önce bu siteye giriyoruz.
 
@@ -48,7 +48,7 @@ botunuz otomatik olarak aktif olacaktır.
 
 seçeneğini seçiyoruz. Botumuz oluştu. İsterseniz bota da resim ekleyebilirsiniz.
 
-**Token nasıl alınır?**
+**💻 Discord Bot Token'i nasıl alınır?**
 
 **1-** Botumuzu oluşturduğumuz yerde "Bot" sekmesine giriyoruz ve karşımızda botun ismi, resmi
 
@@ -78,7 +78,14 @@ Yoksa botunuz sorun çıkartabilir.
 
 seçenek vardır. Tıklayın.
 
+**2-** Sizi bir sayfaya yönlendirecek.
 
+**3-** Yönlendirildiğiniz sayfada "Api kısıtlamaları" bölümünden "Youtube Data Api v3"ü seçin.
+
+**4-** Kaydet dedikten sonra Api key'inizin kısıtlanması 5 ila 10 dakikayı bulabilir. Sabrederek bekleyin.
 //-------------------------------------------------------------------------------------------// 
+
+
+**#EvdeKal #MaskeTak #MesafeniKoru**
 
 

@@ -51,4 +51,3 @@ name: 'yardım',
 aliases: ["help", "y", "h"]
 };
  
-` + 

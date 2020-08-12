@@ -50,7 +50,35 @@ seçeneğini seçiyoruz. Botumuz oluştu. İsterseniz bota da resim ekleyebilirs
 
 **Token nasıl alınır?**
 
-**1-** Botumuzu oluşturduğumuz yerde "Bot" sekmesine giriyoruz.  
+**1-** Botumuzu oluşturduğumuz yerde "Bot" sekmesine giriyoruz ve karşımızda botun ismi, resmi
+
+ve token kısımı çıkacak. "Copy" diyerek botun tokenini kopyalayabilirsiniz.
+
+**Youtube Api Key v3 nasıl alınır?**
+
+**1-** [GoogleDeveloper](https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=balmy-ocean-281816) ilk önce bu siteye giriyoruz.
+
+**2-** Google hesabınız ile Google Developer'a giriş yapın.
+
+**3-** Sağ üstte "Kimlik bilgileri oluştur" seçeneğine tıklayın.
+
+**4-** "Hangi Api'yi kullanıyorsunuz?" sorusuna "Youtube Data Api v3" olarak cevap verin.
+
+**5-** "API'yi nereden çağıracaksınız?" sorusuna "Web Tarayıcısı (JavaScript)" olarak cevap verin.
+
+**6-** "Hangi verileri işleyeceksiniz?" sorusuna "Herkese açık veriler" olarak cevap verin.
+
+**7-** Ardından mavi butona tıklayın ve karşınıza kimlik bilgileri çıkacak. Bunları kısıtlamadan kullanmayın.
+
+Yoksa botunuz sorun çıkartabilir.
+
+**Youtube Api Key v3 nasıl kısıtlandırılır?**
+
+**1-** Api key'i aldıktan sonra kimlik bilgileri geldiğinde aşağıda "Anahtarı Kısıtlayın." diye 
+
+seçenek vardır. Tıklayın.
+
+
 //-------------------------------------------------------------------------------------------// 
 
 

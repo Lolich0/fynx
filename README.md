@@ -87,3 +87,5 @@ ve token kısımı çıkacak. "Copy" diyerek botun tokenini kopyalayabilirsiniz.
 **⚠️ #EvdeKal #MaskeTak #MesafeniKoru ⚠️**
 
 **- Bay Ördekcik**
+
+**- Lord Creative**

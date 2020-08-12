@@ -1,4 +1,6 @@
-const embedRenk = "#36393e";
+const Discord = require("discord.js")
+const fs = require("fs")
+const Fynx = "#36393e";
 const embedBasarili = "#22BF41";
 const embedBasarisiz = "#f30707";
 

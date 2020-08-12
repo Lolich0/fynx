@@ -54,7 +54,7 @@ seçeneğini seçiyoruz. Botumuz oluştu. İsterseniz bota da resim ekleyebilirs
 
 ve token kısımı çıkacak. "Copy" diyerek botun tokenini kopyalayabilirsiniz.
 
-**Youtube Api Key v3 nasıl alınır?**
+**📹 Youtube Api Key v3 nasıl alınır?**
 
 **1-** [GoogleDeveloper](https://console.developers.google.com/apis/api/youtube.googleapis.com/overview?project=balmy-ocean-281816) ilk önce bu siteye giriyoruz.
 
@@ -68,15 +68,13 @@ ve token kısımı çıkacak. "Copy" diyerek botun tokenini kopyalayabilirsiniz.
 
 **6-** "Hangi verileri işleyeceksiniz?" sorusuna "Herkese açık veriler" olarak cevap verin.
 
-**7-** Ardından mavi butona tıklayın ve karşınıza kimlik bilgileri çıkacak. Bunları kısıtlamadan kullanmayın.
+**7-** Ardından mavi butona tıklayın ve karşınıza kimlik bilgileri çıkacak. Bunları kısıtlamadan kullanmayın. Yoksa botunuz sorun çıkartabilir.
 
-Yoksa botunuz sorun çıkartabilir.
 
-**Youtube Api Key v3 nasıl kısıtlandırılır?**
+**📱 Youtube Api Key v3 nasıl kısıtlandırılır?**
 
-**1-** Api key'i aldıktan sonra kimlik bilgileri geldiğinde aşağıda "Anahtarı Kısıtlayın." diye 
+**1-** Api key'i aldıktan sonra kimlik bilgileri geldiğinde aşağıda "Anahtarı Kısıtlayın." diye seçenek vardır. Tıklayın.
 
-seçenek vardır. Tıklayın.
 
 **2-** Sizi bir sayfaya yönlendirecek.
 
@@ -86,6 +84,6 @@ seçenek vardır. Tıklayın.
 //-------------------------------------------------------------------------------------------// 
 
 
-**#EvdeKal #MaskeTak #MesafeniKoru**
+**⚠️ #EvdeKal #MaskeTak #MesafeniKoru ⚠️**
 
-
+**- Bay Ördekcik**
